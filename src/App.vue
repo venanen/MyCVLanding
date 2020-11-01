@@ -1,20 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <HeroSection/>
+
+    <HeroSection :id="1"/>
+    <SecondSection :id="2"/>
+    <ThirdSection :id="3"/>
+    <FourthSection :id="4"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import HeroSection from "@/layout/HeroSection";
+import SecondSection from "@/layout/SecondSection";
+import ThirdSection from "@/layout/ThirdSection";
+import FourthSection from "@/layout/FourthSection";
+
 export default {
   name: 'App',
   components: {
+    FourthSection,
+    ThirdSection,
+    SecondSection,
     HeroSection,
-    HelloWorld
-  }
+
+  },
+
 }
 </script>
 
@@ -26,6 +35,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $color;
-  margin-top: 60px;
+  //margin-top: 60px;
+}
+body{
+  margin:0;
+  height: 0;
 }
 </style>
