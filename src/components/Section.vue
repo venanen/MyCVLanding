@@ -1,5 +1,5 @@
 <template>
-  <section :id="idSection">
+  <section :id="idSection" class="contentSection">
     <div id="sectionBackground">
       <slot name="background">
       </slot>
@@ -18,7 +18,7 @@
 export default {
   name: "Section",
   mounted() {
-    window.addEventListener("scroll", this.handleScroll)
+    //window.addEventListener("scroll", this.handleScroll)
   },
 
   props: {
@@ -33,19 +33,22 @@ export default {
     }
   },
   methods: {
-    handleScroll() {
-      let elem = document.getElementById(this.idSection);
-      console.log(this.idSection, elem.getBoundingClientRect().y,  document.documentElement.clientHeight)
-      if (elem.getBoundingClientRect().y > document.documentElement.clientHeight*1.5 || elem.getBoundingClientRect().y < -(document.documentElement.clientHeight*1.5)){
+    handleScroll(e) {
+      console.log("---------------------")
+
+      let elem = this.$el;
+
+      if (elem.getBoundingClientRect().y > document.documentElement.clientHeight || elem.getBoundingClientRect().y < -(document.documentElement.clientHeight)){
         console.log("Enter")
         return false;
 
       }
-
+      console.log(e)
+/*
       if (elem.getBoundingClientRect().y > 5 && elem.getBoundingClientRect().y < -5 && this.animated) {
         return;
       }
-
+*/
       if (elem.getBoundingClientRect().y < 200 && elem.getBoundingClientRect().y > -200) {
           this.animated = true;
           elem.scrollIntoView({behavior: "smooth"})

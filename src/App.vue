@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
+  <div id="app"  >
 
     <HeroSection :id="1"/>
     <SecondSection :id="2"/>
     <ThirdSection :id="3"/>
     <FourthSection :id="4"/>
+
   </div>
 </template>
 
@@ -14,15 +15,47 @@ import SecondSection from "@/layout/SecondSection";
 import ThirdSection from "@/layout/ThirdSection";
 import FourthSection from "@/layout/FourthSection";
 
+
 export default {
   name: 'App',
   components: {
+
     FourthSection,
     ThirdSection,
     SecondSection,
     HeroSection,
 
   },
+  data: ()=>{
+    return {
+      animated: false
+    }
+  },
+  mounted() {
+
+    console.log(this.$el.parentElement.onscroll = ()=>{
+      this.scrollHandler()
+    })
+  },
+  methods: {
+    scrollHandler: function (){
+
+      for(let elem of document.querySelectorAll("section.contentSection")){
+        if (elem.getBoundingClientRect().y < 200 && elem.getBoundingClientRect().y > -200) {
+          //this.$el.parentElement.scrollTop = 400;
+          elem.scrollIntoView();
+
+
+
+          console.log("Scrolling "+elem.id+" Bounded client "+elem.getBoundingClientRect().y)
+        }
+
+      }
+    },
+    scroll: function(){
+      console.log("sc")
+    }
+  }
 
 }
 </script>

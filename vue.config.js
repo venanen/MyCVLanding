@@ -6,6 +6,7 @@ module.exports = {
                     @import "src/styles/variables";
                     @import "src/styles/global";
                     @import "src/styles/flexboxgrid";
+                    @import "src/milligram/milligram";
                 `
             }
         }
