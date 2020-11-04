@@ -1,10 +1,12 @@
 <template>
   <div id="app"  >
+    <AppContainer>
+      <HeroSection :id="1"/>
+      <SecondSection :id="2"/>
+      <ThirdSection :id="3"/>
+      <FourthSection :id="4"/>
+    </AppContainer>
 
-    <HeroSection :id="1"/>
-    <SecondSection :id="2"/>
-    <ThirdSection :id="3"/>
-    <FourthSection :id="4"/>
 
   </div>
 </template>
@@ -14,12 +16,15 @@ import HeroSection from "@/layout/HeroSection";
 import SecondSection from "@/layout/SecondSection";
 import ThirdSection from "@/layout/ThirdSection";
 import FourthSection from "@/layout/FourthSection";
+// eslint-disable-next-line no-unused-vars
+import LocomotiveScroll from 'locomotive-scroll';
+import AppContainer from "@/layout/AppContainer";
 
 
 export default {
   name: 'App',
   components: {
-
+    AppContainer,
     FourthSection,
     ThirdSection,
     SecondSection,
@@ -33,9 +38,10 @@ export default {
   },
   mounted() {
 
-    console.log(this.$el.parentElement.onscroll = ()=>{
+    /*console.log(this.$el.parentElement.onscroll = ()=>{
       this.scrollHandler()
-    })
+    })*/
+
   },
   methods: {
     scrollHandler: function (){

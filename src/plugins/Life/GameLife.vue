@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="canvasContainer">
     <canvas ref="canvas" width="1000" height="500" id="life">
     </canvas>
 
@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import GameLife from "@/others/Life/lifeCore";
-import initialPixels from "@/others/Life/initialPixels";
+import GameLife from "@/plugins/Life/lifeCore";
+import initialPixels from "@/plugins/Life/initialPixels";
 
 
 
@@ -26,6 +26,7 @@ name: "GameLife",
     const canvas = this.$refs.canvas;
     canvas.width = document.documentElement.clientWidth;
     canvas.height = document.documentElement.clientHeight;
+    //canvas.height =
 
     let frameControl = 2,
         frameCurrent = 0;
@@ -88,6 +89,7 @@ name: "GameLife",
 }
 div{
   min-height: 100vh;
+  height: 100%;
 }
 
 

@@ -7,6 +7,7 @@ module.exports = {
                     @import "src/styles/global";
                     @import "src/styles/flexboxgrid";
                     @import "src/milligram/milligram";
+                    @import "src/plugins/locomotive/locomotive";
                 `
             }
         }

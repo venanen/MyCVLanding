@@ -44,3 +44,6 @@ html {
 .h100{
   height: 100%;
 }
+html.has-scroll-smooth {
+  overflow: inherit !important;
+}
