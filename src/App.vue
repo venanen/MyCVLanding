@@ -1,5 +1,5 @@
 <template>
-  <div id="app"  >
+  <div id="app">
     <AppContainer>
       <HeroSection :id="1"/>
       <SecondSection :id="2"/>
@@ -16,8 +16,6 @@ import HeroSection from "@/layout/HeroSection";
 import SecondSection from "@/layout/SecondSection";
 import ThirdSection from "@/layout/ThirdSection";
 import FourthSection from "@/layout/FourthSection";
-// eslint-disable-next-line no-unused-vars
-import LocomotiveScroll from 'locomotive-scroll';
 import AppContainer from "@/layout/AppContainer";
 
 
@@ -31,37 +29,14 @@ export default {
     HeroSection,
 
   },
-  data: ()=>{
-    return {
-      animated: false
-    }
-  },
+  data: () => ({
+
+  }),
   mounted() {
 
-    /*console.log(this.$el.parentElement.onscroll = ()=>{
-      this.scrollHandler()
-    })*/
 
   },
-  methods: {
-    scrollHandler: function (){
-
-      for(let elem of document.querySelectorAll("section.contentSection")){
-        if (elem.getBoundingClientRect().y < 200 && elem.getBoundingClientRect().y > -200) {
-          //this.$el.parentElement.scrollTop = 400;
-          elem.scrollIntoView();
-
-
-
-          console.log("Scrolling "+elem.id+" Bounded client "+elem.getBoundingClientRect().y)
-        }
-
-      }
-    },
-    scroll: function(){
-      console.log("sc")
-    }
-  }
+  methods: {}
 
 }
 </script>
@@ -76,8 +51,9 @@ export default {
   color: $color;
   //margin-top: 60px;
 }
-body{
-  margin:0;
+
+body {
+  margin: 0;
   height: 0;
 }
 </style>

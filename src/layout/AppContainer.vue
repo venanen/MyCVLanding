@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import locomotiveScroll from "locomotive-scroll";
+import LocomotiveScroll from "locomotive-scroll";
+
 
 export default {
   name: "AppContainer",
@@ -27,18 +28,18 @@ export default {
   methods: {
     initLocoScroll() {
       const _self = this;
-      this.scroll = new locomotiveScroll({
+      this.scroll = new LocomotiveScroll({
         el: _self.$refs['scrollSections'],
         smooth: true,
         smoothMobile: true,
         getDirection: true
       });
+    this.$store.commit("setScroll", this.scroll)
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 section {
   min-height: 600px;

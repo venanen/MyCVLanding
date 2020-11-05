@@ -4,7 +4,7 @@
       <slot name="background">
       </slot>
     </div>
-    <div id="sectionMainContent" class="h100 w100">
+    <div id="sectionMainContent" @click="this.handleClick" class="h100 w100">
       <slot>
 
       </slot>
@@ -33,7 +33,9 @@ export default {
     }
   },
   methods: {
-
+    handleClick: function(e){
+      this.$emit("click", e)
+    }
 
   }
 }
@@ -50,7 +52,7 @@ export default {
 
 section {
   width: 100%;
-  height: 200vh;
+  height: 110vh;
   overflow: hidden;
 }
 

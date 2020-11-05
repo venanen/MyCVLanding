@@ -25,8 +25,9 @@ name: "GameLife",
     //const canvas = document.getElementById('life');
     const canvas = this.$refs.canvas;
     canvas.width = document.documentElement.clientWidth;
-    canvas.height = document.documentElement.clientHeight;
+    canvas.height = canvas.parentElement.offsetHeight;
     //canvas.height =
+    //console.log(canvas.parentElement, canvas.parentElement.offsetHeight)
 
     let frameControl = 2,
         frameCurrent = 0;
@@ -34,7 +35,7 @@ name: "GameLife",
     gL.setStep(30);
     gL.import(initialPixels);
     window.onresize = ()=>{
-      gL.onResizeWindow()
+      //gL.onResizeWindow()
     }
     canvas.addEventListener('mousedown', function (e) {
       gL.setPixelsByMouse(e);
@@ -77,10 +78,10 @@ name: "GameLife",
 #life {
   /*background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);*/
   position: fixed;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: -1;
   filter: blur(2px);
   background: $primary;
@@ -88,7 +89,7 @@ name: "GameLife",
 
 }
 div{
-  min-height: 100vh;
+  min-height: 200vh;
   height: 100%;
 }
 
