@@ -1,10 +1,10 @@
 <template>
-  <section data-scroll-section :id="idSection" class="contentSection">
-    <div id="sectionBackground">
+  <section data-scroll-section :id="idSection" :class="`contentSection`">
+    <div data-scroll id="sectionBackground">
       <slot name="background">
       </slot>
     </div>
-    <div id="sectionMainContent" @click="this.handleClick" class="h100 w100">
+    <div data-scroll id="sectionMainContent" @click="this.handleClick" class="h100 w100">
       <slot>
 
       </slot>
@@ -22,7 +22,8 @@ export default {
   },
 
   props: {
-    id: Number
+    id: Number,
+
   },
   data: ()=>({
     animated: false
@@ -59,6 +60,12 @@ section {
 #sectionMainContent {
   z-index: 1;
   height: 100%;
+  transform: translateX(-90em);
+  transition: 700ms ease-out;
+}
+#sectionMainContent.is-inview {
+  transform: translateX(0em);
+
 }
 
 </style>

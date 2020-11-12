@@ -66,10 +66,7 @@ name: "GameLife",
     },
    stop: ()=>{
       this.life.stop();
-    }, /*
-    reset: ()=>{
-      reset();
-    }*/
+    },
   }
 }
 </script>

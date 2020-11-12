@@ -1,33 +1,32 @@
 <template>
-  <Section @click="eventClick" :id="this.id">
-    <template v-slot:background >
-      <div   class="bg"></div>
+  <Section :class="{doAnimation: sectionClass, 123: true}" @click="eventClick" :id="this.id">
+    <template v-slot:background>
+      <div class="bg"></div>
     </template>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 class="nextSectionTitle">Небольшое FAQ</h2>
-        </div>
+      <SectionTitle>Небольшое FAQ</SectionTitle>
 
-      </div>
       <div class="row">
         <div class="col-lg-8">
-          <InfoBlock :scroll="2" line="left">
+          <info-block :scroll="2" line="left">
             <template v-slot:question>Зачем сайт? Почему не обычное pdf?</template>
             Затем, чтобы чек кек чебурек
-          </InfoBlock>
+          </info-block>
         </div>
         <div class="col-lg-8 col-lg-offset-4">
-          <InfoBlock :scroll="2" line="right">
+          <info-block :scroll="2" line="right">
             <template v-slot:question>Зачем сайт? Почему не обычное pdf?</template>
             Затем, чтобы чек кек чебурек
-          </InfoBlock>
+          </info-block>
         </div>
         <div class="col-lg-8">
-          <InfoBlock :scroll="2" line="left">
+          <info-block :scroll="2" line="left">
             <template v-slot:question>Зачем сайт? Почему не обычное pdf?</template>
             Затем, чтобы чек кек чебурек
-          </InfoBlock>
+          </info-block>
+        </div>
+        <div data-scroll-direction="horizontal" data-scroll data-scroll-speed="3" @click="eventClickMe"
+             class="col-lg-12 clickMe">Клик💥
         </div>
       </div>
     </div>
@@ -38,38 +37,29 @@
 <script>
 import Section from "@/components/Section"
 import InfoBlock from "@/components/InfoBlock";
-//TODO вынести в отдельный файл фукнции
-function rnd(min, max) {
-  let rand = min + Math.random() * (max - min);
-  return Math.round(rand);
-}
-function offset(el) {
-  var rect = el.getBoundingClientRect(),
+import SectionTitle from "@/components/SectionTitle";
 
-      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  return Math.floor(rect.top + scrollTop);
-}
+
 export default {
 
-  components: {InfoBlock, Section},
+  components: {SectionTitle, InfoBlock, Section},
   props: {
     id: Number,
+
   },
-  methods:{
-    eventClick: function(e){
-      //console.log(e)
-      var div = document.createElement('div');
-      div.style.position = 'absolute';
-      //div.style.left = e.clientX;   // Координаты дива X и Y не забываем указать еденицы измерения,
-      //div.style.top = e.clientY;    // например 40px или 20%
-      div.style.background = 'red';   //  Див с красной заливкой ))
-      div.appendChild(document.createTextNode('клик🤖'));  //  Добавим текст в див
-      div.setAttribute("style", `position: absolute; top: ${e.clientY-offset(this.$el)}px; left: ${e.clientX}px;`)
-      div.setAttribute("data-scroll", '')
-      div.setAttribute("data-scroll-speed", rnd(0, 3));
-      this.$el.appendChild(div);   //  Добавим наш див на страницу
-      this.$store.state.scroll.update()
-     console.log(div, offset(this.$el), this.loco)
+  data: () => ({
+    sectionClass: false
+  }),
+  mounted: function () {
+
+  },
+  methods: {
+    eventClick: function (e) {
+      this.$core.placeNewElementByClick(e, this.$el);
+
+    },
+    eventClickMe: function () {
+      this.sectionClass = !this.sectionClass;
 
     }
   }
@@ -77,12 +67,75 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .bg{
-    background: $secondSection;
-    width:100%;
-    height: 100%;
+.bg {
+  //background: $secondSection;
+  width: 100%;
+  height: 100%;
+  -webkit-background-image: linear-gradient(45deg, $first 20%, $secondary);
+  background-image: linear-gradient(45deg, $first 60%, $secondary);
+  animation-name: background;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  background-size: 100%;
+  background-position-x: right;
+  animation-direction: alternate;
+  animation-delay: 1s;
+}
+
+section {
+  height: 200vh;
+}
+
+.clickMe {
+  color: rgb(47, 168, 153)
+}
+
+.doAnimation * {
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  background-size: 100%;
+  animation-direction: alternate;
+  //animation-delay: 1s;
+}
+
+@keyframes background {
+
+  0% {
+    background-size: 100%;
+    animation-timing-function: ease-in-out;
   }
-  section{
-    height: 200vh;
+  50% {
+    background-size: 250%;
+    animation-timing-function: ease-in-out;
   }
+}
+
+@keyframes rotate {
+
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+  /*30%{
+    transform: rotate(40deg);
+    animation-timing-function: ease-in-out;
+  }
+  60%{
+    transform: rotate(20deg);
+    animation-timing-function: ease-in-out;
+  }
+  80%{
+    transform: rotate(60deg);
+    animation-timing-function: ease-in-out;
+  }*/
+  50% {
+    transform: rotate(90deg);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+}
 </style>

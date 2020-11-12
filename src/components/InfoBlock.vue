@@ -1,5 +1,5 @@
 <template>
-  <div data-scroll :data-scroll-speed="this.scroll"
+  <div  data-scroll :data-scroll-speed="this.scroll"
        :class="`info
        line-${this.line}
        ${fixed?'fixed':'unfixed'}`"
@@ -60,5 +60,7 @@ export default {
 }
 .question{
   border-left: $accent solid 0.4em;
+  border-radius: 2px;
+  padding-left: 6px;
 }
 </style>

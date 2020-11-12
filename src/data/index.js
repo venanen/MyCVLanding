@@ -1,0 +1,1 @@
+export {skills, portfolio} from './skills'
