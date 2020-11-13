@@ -21,7 +21,7 @@ export default {
   padding: 1em;
   font-size: 7em;
   text-shadow: 1px 1px 1px black;
-  transform: translateX(100em);
+  transform: translateX(10em);
   transition: 1s ease-out;
 }
 .nextSectionTitle.is-inview{

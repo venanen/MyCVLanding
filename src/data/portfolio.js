@@ -30,7 +30,7 @@ export default {
             subtitle: "Инструмент по токенизации текста, и построению мешка слов на клиентских мощностях без использования сервера",
             link: "https://venanen.github.io/monographJS/",
             image: "https://sun9-46.userapi.com/S483jLJpTcajb7VEkLHN-uSAEK7F2IoDQj_-KA/EaMSvFMKMm0.jpg",
-            class: 'col-xs-12',
+            class: 'col-xs-6',
             github: 'https://github.com/venanen/monographJS',
             badges: ['Frontend','React', 'MobX', 'Az.js', 'Chart.js', 'rsuite']
         },
@@ -39,7 +39,7 @@ export default {
             subtitle: "Лендинг для мастерской по работе и доводке гитар",
             link: "http://efremovguitars.ru/",
             image: "https://sun9-8.userapi.com/_grkmls0ja8XAcxX6Vd2RK8CBLMMCY3s1cgXhw/ysZyWz4Is-o.jpg",
-            class: 'col-xs-12',
+            class: 'col-xs-6',
             github: 'https://github.com/venanen/EfremoffGuitar',
             badges: ['Frontend', 'HTML5']
         },

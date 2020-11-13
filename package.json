@@ -11,6 +11,7 @@
     "@splidejs/vue-splide": "^0.3.5",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
+    "js-dos": "^6.22.59",
     "locomotive-scroll": "^3.6.1",
     "milligram": "^1.4.1",
     "vue": "^2.6.11",

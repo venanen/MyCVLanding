@@ -52,7 +52,7 @@ export default {
 }
 
 section {
-  height: 500vh;
+  //height: 500vh;
 }
 
 .image-background {

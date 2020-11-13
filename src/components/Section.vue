@@ -4,7 +4,7 @@
       <slot name="background">
       </slot>
     </div>
-    <div data-scroll id="sectionMainContent" @click="this.handleClick" class="h100 w100">
+    <div data-scroll :id="{'sectionMainContent': true, 'animated': this.animated}" @click="this.handleClick" class="h100 w100">
       <slot>
 
       </slot>
@@ -23,10 +23,11 @@ export default {
 
   props: {
     id: Number,
+    animated: {type: Boolean, default: true}
 
   },
   data: ()=>({
-    animated: false
+
   }),
   computed: {
     idSection() {
@@ -53,17 +54,18 @@ export default {
 
 section {
   width: 100%;
-  height: 110vh;
+  min-height: 110vh;
+  height: auto;
   overflow: hidden;
 }
 
-#sectionMainContent {
+#sectionMainContent.animated {
   z-index: 1;
   height: 100%;
   transform: translateX(-90em);
   transition: 700ms ease-out;
 }
-#sectionMainContent.is-inview {
+#sectionMainContent.is-inview.animated {
   transform: translateX(0em);
 
 }

@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app" >
+    <div v-if="playingDoom" @click="closeGame" class="close">close</div>
+    <DosGame v-if="playingDoom"/>
+
     <AppContainer>
       <HeroSection :id="1"/>
       <SecondSection :id="2"/>
@@ -17,11 +20,13 @@ import SecondSection from "@/layout/SecondSection";
 import ThirdSection from "@/layout/ThirdSection";
 import FourthSection from "@/layout/FourthSection";
 import AppContainer from "@/layout/AppContainer";
+import DosGame from "@/DosGame";
 
 
 export default {
   name: 'App',
   components: {
+    DosGame,
     AppContainer,
     FourthSection,
     ThirdSection,
@@ -30,13 +35,28 @@ export default {
 
   },
   data: () => ({
-
+    game: true
   }),
   mounted() {
 
 
   },
-  methods: {}
+  computed: {
+    playingDoom: function(){
+      console.log(/digger/.test(window.location.hash))
+      return /digger/.test(window.location.hash) && this.game;
+    },
+
+
+  },
+  methods: {
+    keyPress: function(e){
+      console.log(e)
+    },
+    closeGame: function(){
+      this.game = false;
+    }
+  }
 
 }
 </script>
@@ -55,5 +75,16 @@ export default {
 body {
   margin: 0;
   height: 0;
+}
+.close{
+  color: white;
+  //z-index: 10;
+  position: fixed;
+  top: 3px;
+  right: 3px;
+  z-index: 31;
+}
+.dosbox-container{
+  //display: none !important;
 }
 </style>
