@@ -16,7 +16,7 @@ name: "Badge"
   background: $accent;
   border-radius: 3em;
   padding: 0.4em;
-  margin: 0.4em;
+  margin: 0.1em;
   color: whitesmoke;
 }
 .badge-accent{

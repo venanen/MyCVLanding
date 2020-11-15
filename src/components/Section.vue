@@ -1,6 +1,6 @@
 <template>
-  <section data-scroll-section :id="idSection" :class="`contentSection`">
-    <div data-scroll id="sectionBackground">
+  <section  data-scroll-section :id="idSection" :class="`contentSection`">
+    <div  id="sectionBackground">
       <slot name="background">
       </slot>
     </div>
@@ -11,6 +11,7 @@
     </div>
 
   </section>
+
 
 </template>
 
@@ -23,7 +24,9 @@ export default {
 
   props: {
     id: Number,
-    animated: {type: Boolean, default: true}
+    animated: {type: Boolean, default: true},
+
+
 
   },
   data: ()=>({
@@ -54,8 +57,8 @@ export default {
 
 section {
   width: 100%;
-  min-height: 110vh;
-  height: auto;
+  //min-height: 110vh;
+  #height: 100vh;
   overflow: hidden;
 }
 

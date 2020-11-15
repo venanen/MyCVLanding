@@ -1,10 +1,14 @@
 <template>
-  <div  data-scroll :data-scroll-speed="this.scroll"
+  <div data-scroll :data-scroll-speed="this.scroll"
        :class="`info
        line-${this.line}
        ${fixed?'fixed':'unfixed'}`"
   >
-    <div ><h2 class="question"><i><slot name="question"></slot></i></h2></div>
+    <div>
+      <h2 class="question"><i>
+        <slot name="question"></slot>
+      </i></h2>
+    </div>
     <slot></slot>
   </div>
 </template>
@@ -48,17 +52,21 @@ export default {
 .line-left {
   border-left: $accent solid 0.4em;
 }
-.fixed{
+
+.fixed {
   position: fixed;
   max-width: 15vw;
 }
-.unfixed{
+
+.unfixed {
   width: 100%;
 }
-.qustion h2{
+
+.qustion h2 {
   border-left: #e76f51 solid 0.4em;
 }
-.question{
+
+.question {
   border-left: $accent solid 0.4em;
   border-radius: 2px;
   padding-left: 6px;

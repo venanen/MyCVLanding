@@ -8,6 +8,8 @@
       <SecondSection :id="2"/>
       <ThirdSection :id="3"/>
       <FourthSection :id="4"/>
+      <ImageBG/>
+      <FifthSection :id="5"/>
     </AppContainer>
 
 
@@ -21,11 +23,15 @@ import ThirdSection from "@/layout/ThirdSection";
 import FourthSection from "@/layout/FourthSection";
 import AppContainer from "@/layout/AppContainer";
 import DosGame from "@/DosGame";
+import FifthSection from "@/layout/FifthSection";
+import ImageBG from "@/ImageBG";
 
 
 export default {
   name: 'App',
   components: {
+    ImageBG,
+    FifthSection,
     DosGame,
     AppContainer,
     FourthSection,

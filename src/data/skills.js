@@ -10,7 +10,7 @@ const colorsBackground = [
     `#ffffff${alpha}`,
     `#ff6b6b${alpha}`,
     `#ffffff${alpha}`
-]
+].sort(() => Math.random() - 0.5)
 const option = {
         responsive: true,
         legend: {
@@ -86,6 +86,28 @@ export default {
             datasets: [{
                 data: [
                     95, 90, 70, 98, 99, 80,
+                ],
+                backgroundColor: colorsBackground,
+                label: 'My dataset' // for legend
+            }],
+
+        },
+        option: option,
+    },
+    addedSkills:{
+        data: {
+            labels: [
+                'Python',
+                'C',
+                'Разработка электроники',
+                'Кибербезопасность',
+                'Еще раз гугление🙂',
+                "Фотография",
+                "Оформление документации по ЕСКД"
+            ],
+            datasets: [{
+                data: [
+                    80, 60, 90, 90, 99, 80,96
                 ],
                 backgroundColor: colorsBackground,
                 label: 'My dataset' // for legend

@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 section {
-  min-height: 600px;
+
   border-bottom: 1px solid #38495C;
   display: flex;
   flex-direction: column;
