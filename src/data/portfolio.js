@@ -11,7 +11,7 @@ export default {
         {
             title: "MiLever",
             subtitle: "Главная страница и каталог интернет магазина бренда Xiaomi, поддерживает смену темы",
-            //link: "https://github.com/venanen/MiLever",
+            link: "https://sharp-edison-d38ebd.netlify.app/",
             image: "https://sun9-5.userapi.com/iGh6eNwQM17fyEqC0b9MrmmrPirmIrPIyNhPFQ/YdzkNjGtJ14.jpg",
             class: 'col-xs-6',
             github: 'https://github.com/venanen/MiLever',

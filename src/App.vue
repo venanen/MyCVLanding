@@ -1,7 +1,7 @@
 <template>
   <div id="app" >
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
-    <DosGame v-if="playingDoom"/>
+    <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
 
     <AppContainer>
       <HeroSection :id="1"/>
@@ -35,16 +35,21 @@ export default {
 
   },
   data: () => ({
-    game: true
+    game: true,
+    location: window.location.hash
   }),
   mounted() {
 
+    window.onhashchange = ()=>{
+      console.log(window.location.hash);
+      this.location = window.location.hash;
+    }
 
   },
   computed: {
     playingDoom: function(){
-      console.log(/digger/.test(window.location.hash))
-      return /digger/.test(window.location.hash) && this.game;
+      //console.log(/digger/.test(window.location.hash))
+      return /digger/.test(this.location) && this.game;
     },
 
 

@@ -13,6 +13,9 @@
         <div class="col-lg-4 col-lg-offset-2 chart-container">
           <chart :chartdata="softSkills.data" :options="softSkills.option"/>
         </div>
+
+        <a id="digger" title="Start digger game" href="#digger">🕹</a>
+
       </div>
     </div>
 
@@ -31,7 +34,7 @@ export default {
   props: {
     id: Number,
   },
-  data: ()=>({
+  data: () => ({
     hardSkills: skills.hardSkills,
     softSkills: skills.softSkills
 
@@ -41,6 +44,41 @@ export default {
 
 <style scoped lang="scss">
 $soft-hard-time: 1s;
+#digger {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  opacity: 0.3;
+  color: initial;
+  font-size: 3em;
+  transform: scale(1);
+  animation-name: digger;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+}
+@keyframes digger {
+  0%{
+    transform: scale(1) rotate(0turn);
+    opacity: 0.5;
+
+
+  }
+  33%{
+    transform: scale(1.4) rotate(20deg);
+    opacity: 0.7;
+  }
+  66%{
+    transform: scale(1.4) rotate(-20deg);
+    opacity: 0.7;
+  }
+  100%{
+    transform: scale(1) rotate(0turn);
+    opacity: 0.5;
+  }
+}
+
 .bg {
   //-webkit-background-image: linear-gradient(45deg, $accent 20%, $lightAccent);
   background-image: linear-gradient(84deg, $accent 60%, $lightAccent);
@@ -55,9 +93,11 @@ $soft-hard-time: 1s;
   animation-direction: alternate;
   animation-delay: 1s;
 }
-.chart-container{
+
+.chart-container {
   margin-bottom: 2em;
 }
+
 @keyframes background {
 
   0% {

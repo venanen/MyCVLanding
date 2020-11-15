@@ -1,24 +1,30 @@
 <template>
   <div>
-    <canvas id="jsdos"></canvas>
+    <canvas ref="canvas" id="jsdos"></canvas>
   </div>
 </template>
 
 <script>
 // eslint-disable-next-line no-unused-vars
 import Dos from 'js-dos'
-export default {
-name: "DosGame",
-  mounted() {
-  const canvas = document.getElementById("jsdos");
 
-  window.Dos(canvas, {
+export default {
+  name: "DosGame",
+  props: {
+    file: String,
+    command: String
+  },
+
+  mounted() {
+    const canvas = this.$refs.canvas;
+    let self = this;
+    window.Dos(canvas, {
       wdosboxUrl: "https://js-dos.com/6.22/current/wdosbox.js",
       cycles: 1000,
       autolock: false,
     }).ready(function (fs, main) {
-      fs.extract("/digger.zip").then(function () {
-        main(["-c", "DIGGER.COM"]).then(function (ci) {
+      fs.extract(`/${self.file}`).then(function () {
+        main(["-c", `${self.command}`]).then(function (ci) {
           window.ci = ci;
         });
       });
@@ -28,12 +34,12 @@ name: "DosGame",
 </script>
 
 <style scoped>
-  canvas{
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 30;
-  }
+canvas {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
 </style>
