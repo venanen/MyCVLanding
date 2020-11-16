@@ -1,5 +1,5 @@
 <template>
-  <div ref="scrollSections" class="hello">
+  <div data-scroll-container data-scroll-repeat="true" ref="scrollSections" class="hello">
     <slot></slot>
   </div>
 </template>
@@ -21,9 +21,7 @@ export default {
   },
   mounted() {
     const _self = this;
-    this.$nextTick(function() {
-      _self.initLocoScroll();
-    });
+    _self.initLocoScroll();
   },
   methods: {
     initLocoScroll() {
@@ -34,6 +32,8 @@ export default {
         smoothMobile: true,
         getDirection: true
       });
+      window.loco = this.scroll;
+
     this.$store.commit("setScroll", this.scroll)
     }
   }

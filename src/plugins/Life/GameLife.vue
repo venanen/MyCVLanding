@@ -11,16 +11,12 @@ import GameLife from "@/plugins/Life/lifeCore";
 import initialPixels from "@/plugins/Life/initialPixels";
 
 
-
-
-
-
 //window.requestAnimationFrame(start)
 export default {
-  data: ()=>({
+  data: () => ({
     life: {}
   }),
-name: "GameLife",
+  name: "GameLife",
   mounted: function () {
     //const canvas = document.getElementById('life');
     const canvas = this.$refs.canvas;
@@ -34,7 +30,7 @@ name: "GameLife",
     const gL = new GameLife(canvas);
     gL.setStep(30);
     gL.import(initialPixels);
-    window.onresize = ()=>{
+    window.onresize = () => {
       //gL.onResizeWindow()
     }
     canvas.addEventListener('mousedown', function (e) {
@@ -44,7 +40,7 @@ name: "GameLife",
     let animation = "";
     this.life.start = () => {
 
-      if(frameCurrent++> frameControl) {
+      if (frameCurrent++ > frameControl) {
         frameCurrent = 0;
         gL.tick()
       }
@@ -61,12 +57,12 @@ name: "GameLife",
 
   },
   methods: {
-    start: function(){
+    start: function () {
       this.life.start();
     },
-   stop: ()=>{
+    stop: () => {
       this.life.stop();
-    },
+    }
   }
 }
 </script>
@@ -85,7 +81,8 @@ name: "GameLife",
 
 
 }
-div{
+
+div {
   min-height: 200vh;
   height: 100%;
 }

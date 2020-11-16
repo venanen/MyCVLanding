@@ -32,7 +32,12 @@ import ProductCard from "@/components/ProductCard";
 import portfolioData from "@/data/portfolio";
 
 export default {
-
+  mounted() {
+    //TODO delete this
+    this.$nextTick(()=>{
+      window.loco.update();
+    })
+  },
   components: {ProductCard, SectionTitle, Section},
   data: ()=>({
     prods: portfolioData
@@ -52,13 +57,9 @@ export default {
 }
 
 section {
-  //height: 500vh;
+  min-height: 300vh;
 }
 
-.image-background {
-  //height: 30vh;
-
-}
 
 .prod-fluid {
   padding-left: 10vw;

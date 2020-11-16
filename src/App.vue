@@ -1,18 +1,17 @@
 <template>
   <div id="app" >
-    <div v-if="playingDoom" @click="closeGame" class="close">close</div>
-    <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
+
 
     <AppContainer>
       <HeroSection :id="1"/>
-      <SecondSection :id="2"/>
       <ThirdSection :id="3"/>
       <FourthSection :id="4"/>
-      <ImageBG/>
       <FifthSection :id="5"/>
+      <SecondSection :id="2"/>
     </AppContainer>
-
-
+    <div v-if="playingDoom" @click="closeGame" class="close">close</div>
+    <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
+    <ImageBG/>
   </div>
 </template>
 
@@ -22,9 +21,9 @@ import SecondSection from "@/layout/SecondSection";
 import ThirdSection from "@/layout/ThirdSection";
 import FourthSection from "@/layout/FourthSection";
 import AppContainer from "@/layout/AppContainer";
-import DosGame from "@/DosGame";
+import DosGame from "@/components/DosGame";
 import FifthSection from "@/layout/FifthSection";
-import ImageBG from "@/ImageBG";
+import ImageBG from "@/components/ImageBG";
 
 
 export default {
@@ -47,7 +46,7 @@ export default {
   mounted() {
 
     window.onhashchange = ()=>{
-      console.log(window.location.hash);
+
       this.location = window.location.hash;
     }
 
