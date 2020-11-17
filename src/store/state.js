@@ -1,3 +1,7 @@
 export default {
-    scroll: {}
+    scroll: {},
+    loadedImage:{
+        bgImage: false,
+
+    }
 };

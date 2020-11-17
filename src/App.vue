@@ -1,7 +1,7 @@
 <template>
-  <div id="app" >
+  <div id="app">
 
-
+    <Loading v-if="!isLoading"/>
     <AppContainer>
       <HeroSection :id="1"/>
       <ThirdSection :id="3"/>
@@ -24,11 +24,13 @@ import AppContainer from "@/layout/AppContainer";
 import DosGame from "@/components/DosGame";
 import FifthSection from "@/layout/FifthSection";
 import ImageBG from "@/components/ImageBG";
-
+import Loading from "@/Loading";
+import {mapGetters} from 'vuex';
 
 export default {
   name: 'App',
   components: {
+    Loading,
     ImageBG,
     FifthSection,
     DosGame,
@@ -41,31 +43,37 @@ export default {
   },
   data: () => ({
     game: true,
-    location: window.location.hash
+    location: window.location.hash,
+
   }),
   mounted() {
 
-    window.onhashchange = ()=>{
+    window.onhashchange = () => {
 
       this.location = window.location.hash;
     }
 
   },
   computed: {
-    playingDoom: function(){
-      //console.log(/digger/.test(window.location.hash))
+    playingDoom: function () {
+
       return /digger/.test(this.location) && this.game;
     },
+    ...mapGetters([
+      'isLoading'
+      // ...
+    ])
 
 
   },
   methods: {
-    keyPress: function(e){
+    keyPress: function (e) {
       console.log(e)
     },
-    closeGame: function(){
+    closeGame: function () {
       this.game = false;
-    }
+    },
+
   }
 
 }
@@ -86,7 +94,8 @@ body {
   margin: 0;
   height: 0;
 }
-.close{
+
+.close {
   color: white;
   //z-index: 10;
   position: fixed;
@@ -94,7 +103,8 @@ body {
   right: 3px;
   z-index: 31;
 }
-.dosbox-container{
+
+.dosbox-container {
   //display: none !important;
 }
 </style>

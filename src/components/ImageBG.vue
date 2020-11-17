@@ -1,8 +1,8 @@
 <template>
-  <div class="bg" id="bg" @scroll="(e)=>console.log(e)">
+  <div class="bg" id="bg">
 
     <div data-scroll>
-      <img v-for="number in backgrounds" :key="number" :src="`/back${number}.jpg`"/>
+      <img v-for="number in backgrounds" :key="number" @load="setLoadedImage({name: 'bgImage'})" :src="`/back${number}.jpg`"/>
     </div>
 
 
@@ -12,20 +12,27 @@
 <script>
 
 
+import {mapMutations} from "vuex";
+
 export default {
-name: "ImageBG",
+  name: "ImageBG",
   data: () => ({
     backgrounds: [1],//[1,2,3,4,5,6,7,8,9,10]
   }),
-
+  methods: {
+    ...mapMutations([
+      'setLoadedImage'
+    ])
+  }
 }
 </script>
 
 <style scoped lang="scss">
 $countbg: 10;
-.black-screen{
+.black-screen {
 
 }
+
 .bg {
   position: fixed;
   z-index: -1;
@@ -48,7 +55,7 @@ $countbg: 10;
 
 
 img {
-  height:150vh;
+  height: 150vh;
 }
 
 @keyframes bgScroll {

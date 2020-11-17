@@ -1,5 +1,5 @@
 <template>
-  <section data-scroll-repeat="true" data-scroll data-scroll-call="()=>{console.log(23123)}" data-scroll-section :id="idSection" :class="`contentSection`">
+  <section data-scroll-repeat="true" data-scroll data-scroll-section :id="idSection" :class="`contentSection`">
     <div  id="sectionBackground">
       <slot name="background">
       </slot>
