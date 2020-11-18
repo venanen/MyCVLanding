@@ -12,27 +12,27 @@ const colorsBackground = [
     `#ffffff${alpha}`
 ].sort(() => Math.random() - 0.5)
 const option = {
-        responsive: true,
-        legend: {
-            labels: {
-                fontColor: 'whitesmoke'
-            }
-        },
-        title: {
-            display: false,
-            text: 'Стек технологий',
+    responsive: false,
+    legend: {
+        labels: {
             fontColor: 'whitesmoke'
+        }
+    },
+    title: {
+        display: false,
+        text: 'Стек технологий',
+        fontColor: 'whitesmoke'
+    },
+    scale: {
+        ticks: {
+            beginAtZero: true
         },
-        scale: {
-            ticks: {
-                beginAtZero: true
-            },
-            reverse: false
-        },
-        animation: {
-            animateRotate: true,
-            animateScale: true
-        },
+        reverse: false
+    },
+    animation: {
+        animateRotate: true,
+        animateScale: true
+    },
 
     }
 

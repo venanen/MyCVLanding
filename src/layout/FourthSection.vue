@@ -1,5 +1,5 @@
 <template>
-  <Section :id="this.id" :animated="false">
+  <Section :id="this.id" :animated="true">
     <template v-slot:background>
       <div class="bg"></div>
     </template>

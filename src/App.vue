@@ -1,17 +1,23 @@
 <template>
   <div id="app">
 
-    <Loading v-if="!isLoading"/>
     <AppContainer>
       <HeroSection :id="1"/>
       <ThirdSection :id="3"/>
       <FourthSection :id="4"/>
       <FifthSection :id="5"/>
+      <about-me-section :id="6"/>
       <SecondSection :id="2"/>
+
     </AppContainer>
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
     <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
     <ImageBG/>
+    <transition name="fade">
+
+      <Loading key="main-loading" v-if="!isLoading"/>
+
+    </transition>
   </div>
 </template>
 
@@ -24,12 +30,14 @@ import AppContainer from "@/layout/AppContainer";
 import DosGame from "@/components/DosGame";
 import FifthSection from "@/layout/FifthSection";
 import ImageBG from "@/components/ImageBG";
-import Loading from "@/Loading";
+import Loading from "@/components/Loading";
 import {mapGetters} from 'vuex';
+import AboutMeSection from "@/layout/AboutMeSection";
 
 export default {
   name: 'App',
   components: {
+    AboutMeSection,
     Loading,
     ImageBG,
     FifthSection,
@@ -47,7 +55,7 @@ export default {
 
   }),
   mounted() {
-
+    this.$store.dispatch('doneTimeOut')
     window.onhashchange = () => {
 
       this.location = window.location.hash;
@@ -102,6 +110,15 @@ body {
   top: 3px;
   right: 3px;
   z-index: 31;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.8s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+{
+  opacity: 0;
 }
 
 .dosbox-container {

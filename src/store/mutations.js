@@ -1,12 +1,15 @@
 export default {
-    addSection(state){
-       state;
+    addSection(state) {
+        state;
     },
-    setScroll(state, scroll){
+    setScroll(state, scroll) {
         this.state.scroll = scroll;
     },
-    setLoadedImage(state, {name}){
+    setLoadedImage(state, {name}) {
         this.state.loadedImage[name] = true;
 
+    },
+    setComleteTimeOut(state) {
+        state.loadedImage.completeTimeOut = true
     }
 }

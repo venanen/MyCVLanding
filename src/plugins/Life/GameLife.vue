@@ -83,7 +83,7 @@ export default {
 }
 
 div {
-  min-height: 200vh;
+  min-height: 110vh;
   height: 100%;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <Section :class="{doAnimation: sectionClass, 123: true}" @click="eventClick" :id="this.id">
+  <Section :class="{doAnimation: sectionClass}" @click="eventClick" :id="this.id">
     <template v-slot:background>
       <div class="bg"></div>
     </template>

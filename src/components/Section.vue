@@ -57,7 +57,7 @@ export default {
 
 section {
   width: 100%;
-  //min-height: 110vh;
+  min-height: 100vh;
   #height: 100vh;
   overflow: hidden;
 }

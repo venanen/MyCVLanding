@@ -35,27 +35,42 @@
 ::-webkit-scrollbar:hover{
   width: 10px;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 .w100 {
   width: 100%;
 }
-.h100{
+
+.h100 {
   height: 100%;
 }
+
+.w100v {
+  width: 100vw;
+}
+
+.h100v {
+  height: 100vh;
+}
+
 html.has-scroll-smooth {
   overflow: inherit !important;
 }
-*{
+
+* {
   //opacity: 0.5
 }
+
 [data-scroll-section-inview] section {
   animation-duration: 5s;
   animation-name: bounce-6;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
+
 @keyframes bounce-6 {
   0%   { transform: rotate(0deg);     }
   50%  { transform: rotate(5deg);  }

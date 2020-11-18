@@ -2,7 +2,10 @@
   <div class="bg" id="bg">
 
     <div data-scroll>
-      <img v-for="number in backgrounds" :key="number" @load="setLoadedImage({name: 'bgImage'})" :src="`/back${number}.jpg`"/>
+      <div id="background"></div>
+      <!--   Хак для того, чтобы дождаться загрузки картинки на заднем планеr-->
+      <img @load="setLoadedImage({name: 'bgImage'})"
+           :src="`/back1.jpg`"/>
     </div>
 
 
@@ -33,6 +36,14 @@ $countbg: 10;
 
 }
 
+#background {
+  height: 150vh;
+  width: 120vw;
+  background-image: url(/back1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .bg {
   position: fixed;
   z-index: -1;
@@ -55,7 +66,8 @@ $countbg: 10;
 
 
 img {
-  height: 150vh;
+  width: 1px;
+  height: 1px;
 }
 
 @keyframes bgScroll {
@@ -63,7 +75,7 @@ img {
     transform: translate(0, -40vh);
   }
   100% {
-    transform: translate(calc(-1 * (225vh - 100vw)), -40vh);
+    transform: translate(-10vw, -40vh);
   }
 }
 
