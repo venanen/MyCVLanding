@@ -95,13 +95,14 @@ $breakpoint: 700px;
 
   &:before {
     content: '';
-    position: fixed;
-    top: 0px;
-    left: 50%;
-    bottom: 0px;
-    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 25px;
+    height: 100%;
     width: 4px;
-    background-color: #fff;
+    background: #7E57C2;
+    left: 50%;
+    margin-left: -2px;
   }
 
   .entries {
