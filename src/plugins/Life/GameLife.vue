@@ -28,7 +28,7 @@ export default {
     let frameControl = 2,
         frameCurrent = 0;
     const gL = new GameLife(canvas);
-    gL.setStep(30);
+    gL.setStep(40);
     gL.import(initialPixels);
     window.onresize = () => {
       //gL.onResizeWindow()
@@ -76,10 +76,15 @@ export default {
   left: 0;
   right: 0;
   z-index: -1;
-  filter: blur(2px);
+  //это было реально красиво, но производительность ужасна
+  //filter: blur(2px);
   background: $primary;
 
 
+}
+
+#canvasContainer {
+  background: #00000094;
 }
 
 div {

@@ -67,7 +67,8 @@
 
         </div>
         <div class="col-lg-6 col-xs-12">
-          <div id="timeline-container" @touchstart="disableLoco" @touchend="enableLoco"
+          <!--          @touchstart="disableLoco" @touchend="enableLoco"-->
+          <div id="timeline-container"
                @mouseenter="disableLoco()" @mouseleave="enableLoco()">
             <TimeLine/>
           </div>
@@ -171,7 +172,7 @@ img {
 }
 
 section {
-  min-height: 150vh;
+  //min-height: 150vh;
 }
 @media only screen and (min-width: 300px) and (max-width: 760px){
   img{

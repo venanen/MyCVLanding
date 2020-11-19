@@ -2,19 +2,21 @@
   <Section :id="this.id">
     <template v-slot:background>
 
-      <div class="bg" data-scroll-speed="0" data-scroll>
+      <div class="bg">
         <GameLife/>
       </div>
     </template>
-    <CenterContainer :fluid="true" :row="false">
-      <h1 data-scroll data-scroll-speed="2"  class="mainTitle">Резюме</h1>
-      <h2  data-scroll data-scroll-speed="4"  class="secondTitle"><i>Да, в формате сайта</i></h2>
-      <h5  data-scroll data-scroll-speed="6"  class="secondTitle"><i>Зато креативно </i>😎</h5>
-    </CenterContainer>
-    <div data-scroll-speed="2" data-scroll class="tips">Задний фон - это не видео, а игра "Жизнь", написанная мной со стандартными правилами, работающая в реальном времени</div>
+    <div class="h100v w100v">
+      <CenterContainer :fluid="true" :row="false">
+        <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме</h1>
+        <h2 data-scroll data-scroll-speed="4" class="secondTitle"><i>Да, в формате сайта</i></h2>
+        <h5 data-scroll data-scroll-speed="6" class="secondTitle"><i>Зато креативно </i>😎</h5>
+      </CenterContainer>
+    </div>
 
-
-
+    <div data-scroll-speed="2" data-scroll class="tips">Задний фон - это не видео, а игра "Жизнь", написанная мной со
+      стандартными правилами, работающая в реальном времени
+    </div>
 
 
   </Section>

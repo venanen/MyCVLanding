@@ -29,7 +29,7 @@ export default {
 
 <style scoped lang="scss">
 .info {
-
+  margin-bottom: 2em;
   right: 3em;
 
   background: rgba(0, 0, 00, 0.34);

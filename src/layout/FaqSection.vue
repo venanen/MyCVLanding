@@ -83,7 +83,7 @@ export default {
 }
 
 section {
-  height: 200vh;
+  //height: 200vh;
 }
 
 .clickMe {

@@ -1,10 +1,11 @@
 <template>
-  <section data-scroll-repeat="true" data-scroll data-scroll-section :id="idSection" :class="`contentSection`">
-    <div  id="sectionBackground">
+  <section data-scroll data-scroll-section :id="idSection" :class="`contentSection`">
+    <div id="sectionBackground">
       <slot name="background">
       </slot>
     </div>
-    <div data-scroll  :class="{'sectionMainContent': true, 'animated': this.animated}" @click="this.handleClick" class="h100 w100">
+    <div data-scroll :class="{'sectionMainContent': true, 'animated': this.animated}" @click="this.handleClick"
+         class="h100 w100">
       <slot>
 
       </slot>
@@ -57,8 +58,8 @@ export default {
 
 section {
   width: 100%;
-  min-height: 100vh;
-  #height: 100vh;
+  //min-height: 100vh;
+  //height: 100vh;
   overflow: hidden;
 }
 
