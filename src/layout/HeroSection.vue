@@ -6,9 +6,11 @@
         <GameLife/>
       </div>
     </template>
-    <SubSection>
-      <FirstBlock/>
-    </SubSection>
+    <CenterContainer :fluid="true" :row="false">
+      <h1 data-scroll data-scroll-speed="2"  class="mainTitle">Резюме</h1>
+      <h2  data-scroll data-scroll-speed="4"  class="secondTitle"><i>Да, в формате сайта</i></h2>
+      <h5  data-scroll data-scroll-speed="6"  class="secondTitle"><i>Зато креативно </i>😎</h5>
+    </CenterContainer>
     <div data-scroll-speed="2" data-scroll class="tips">Задний фон - это не видео, а игра "Жизнь", написанная мной со стандартными правилами, работающая в реальном времени</div>
 
 
@@ -21,13 +23,13 @@
 <script>
 import Section from "@/components/Section"
 import GameLife from "@/plugins/Life/GameLife";
-import FirstBlock from "@/layout/HeroSection/FirstBlock";
-import SubSection from "@/components/SubSection";
+
+import CenterContainer from "@/components/CenterContainer";
 
 
 export default {
   name: "HeroSection",
-  components: { SubSection, FirstBlock,  GameLife, Section},
+  components: {CenterContainer,   GameLife, Section},
   props: {
     id: Number,
   }
@@ -35,8 +37,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.tips{
 
+.tips{
+  position: fixed;
+  bottom: -2px;
+  right: 0;
+  left: 0;
 }
 
 .bg {
@@ -54,5 +60,12 @@ export default {
 
 .secondTitle{
   opacity: 0.8;
+}
+@media only screen and (min-width: 300px) and (max-width: 760px){
+  .mainTitle{
+    font-size: 5em;
+    font-weight: 200;
+    text-shadow: black 1px 1px 2px;
+  }
 }
 </style>

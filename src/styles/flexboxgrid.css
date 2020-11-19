@@ -266,7 +266,7 @@
   order: 1;
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 48em) and (max-width: 63em) {
   .container {
     width: 49rem;
   }
@@ -381,8 +381,8 @@
   }
 
   .col-sm-12 {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100% !important;
+    flex-basis: 100% !important;
     max-width: 100%;
   }
 
@@ -497,7 +497,7 @@
   }
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64em) and (max-width: 74em) {
   .container {
     width: 65rem;
   }

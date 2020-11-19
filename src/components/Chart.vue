@@ -6,6 +6,9 @@ export default {
   props: ['chartdata', 'options'],
   mounted () {
     this.renderChart(this.chartdata, this.options)
+    this.$nextTick(()=>{
+      this.$data._chart.update();
+    })
   }
 }
 </script>

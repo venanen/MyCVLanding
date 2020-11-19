@@ -16,12 +16,12 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-4 col-sm-12">
           <chart :chartdata="addedSkills.data" :options="addedSkills.option"/>
         </div>
-        <div class="col-xs-8">
+        <div class="col-xs-8 col-sm-12">
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-sm-12">
               <info-block :scroll="3" line="left">
                 <template v-slot:question>Программирование и безопасность</template>
                 Знаю
@@ -44,7 +44,7 @@
                 и даже зарепортил две уязвимости
               </info-block>
             </div>
-            <div class="col-lg-8 col-lg-offset-4">
+            <div class="col-lg-8 col-lg-offset-4 col-sm-12">
               <info-block :scroll="3" line="left">
                 <template v-slot:question>Разработка электроники</template>
                 Основная специальность в университете. Владею пакетами
@@ -66,8 +66,8 @@
                 при написании документации
               </info-block>
             </div>
-            <div class="col-lg-8">
-              <info-block :scroll="3" line="left">
+            <div class="col-lg-8 col-sm-12">
+              <info-block :scroll="2" line="left">
                 <template v-slot:question>Фотография</template>
                 Основное хобби. Снимаю
                 <badge>пейзажи</badge>
@@ -100,7 +100,8 @@ import skills from "@/data/skills";
 import Badge from "@/components/Badge";
 
 export default {
-  name: "FifthSection",
+  name: "AdditionalSkilsSection",
+  //TODO delete array
   data: () => ({
     backgrounds: [1],//[1,2,3,4,5,6,7,8,9,10]
     addedSkills: skills.addedSkills,
@@ -129,7 +130,7 @@ export default {
 }
 
 section {
-  height: 200vh
+
 }
 
 .bg {

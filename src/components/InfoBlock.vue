@@ -71,4 +71,13 @@ export default {
   border-radius: 2px;
   padding-left: 6px;
 }
+@media only screen and (min-width: 300px) and (max-width: 760px){
+  .info{
+    font-size: 1em;
+  }
+  .unfixed{
+    width: 90%;
+  }
+
+}
 </style>

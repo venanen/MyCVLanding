@@ -3,58 +3,18 @@
   <div id="timeline-container">
 
 
-    <div class="entries">
-      <div class="entry">
-        <div class="title">2011</div>
-        <div class="body">
-          <p>Neque sunt voluptatibus repellat pariatur ut enim. Eveniet rerum suscipit eveniet amet dignissimos.
-            Doloremque et distinctio quod molestiae ut.</p>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="title">2012</div>
-        <div class="body">
-          <p>Quo nobis cumque dolor iure voluptatem voluptatem alias soluta.</p>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="title big">2013</div>
-        <div class="body">
-          <p>Rerum sit libero possimus amet excepturi. Exercitationem enim dolores sunt praesentium dolorum
-            praesentium.</p>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="title">2014</div>
-        <div class="body">
-          <p>Voluptatibus veniam ea reprehenderit atque. Reiciendis non laborum adipisci ipsa pariatur omnis. Sed ipsam
-            repudiandae velit. Omnis libero nostrum aperiam nemo dolor ea eos eius. Esse a non itaque quidem.</p>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="title">2015</div>
-        <div class="body">
-          <p>VAdipisci totam omnis cum et suscipit excepturi et excepturi. Inventore sequi sit ut aliquid. Modi aut
-            dolores dignissimos.</p>
-          <p>Delectus facere officia consequuntur molestias deserunt illo. Placeat laudantium beatae natus excepturi ab
-            nihil voluptates.</p>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="title big">2016</div>
-        <div class="body">
-          <p>Impedit dolorem commodi explicabo fugit aut alias voluptatem. Magnam earum rerum quae dicta quibusdam
-            aliquam ut.</p>
-        </div>
-      </div>
-      <div class="entry">
-        <div class="title">2017</div>
-        <div class="body">
-          <p>Qui facere eos aut suscipit doloremque quos...</p>
-        </div>
-      </div>
-    </div>
+    <ul class="timeline">
+      <li v-for="(item, i) in data" :key="i" class="timeline-event">
+        <label class="timeline-event-icon"></label>
+        <div class="timeline-event-copy">
+          <p class="timeline-event-thumbnail">{{ item.year}}</p>
+          <h3>{{ item.head }}</h3>
+          <h4 v-html="item.text"></h4>
 
+        </div>
+      </li>
+
+    </ul>
 
   </div>
 </template>
@@ -72,107 +32,122 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$color: skyblue;
-$lineColor: $accent;
-$fontColor: #bbb;
-$bgColor1: #222;
-$bgColor2: #444;
-$yearBgColor: #333;
 
-$breakpoint: 700px;
 
 #timeline-container {
   #width: 28vw;
   border-radius: 1vw;
   box-shadow: 6px 5px 4px #00000052;
 }
+::marker{
+  color: $accent;
+}
 
-#timeline-container {
-  background-color: #1D1D1D;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Droid Sans', sans-serif;
+
+/* Variables */
+$color-1: black;
+$color-2: whitesmoke;
+$color-3: $accent;
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/* Layout */
+* {
+
+}
+
+/* Styling */
+.timeline {
+  margin: 4em auto;
+  position: relative;
+  max-width: 46em;
 
   &:before {
+    background-color: $color-1;
     content: '';
+    margin-left: -1px;
     position: absolute;
     top: 0;
-    left: 25px;
+    left: 2em;
+    width: 2px;
     height: 100%;
-    width: 4px;
-    background: #7E57C2;
-    left: 50%;
-    margin-left: -2px;
   }
+}
 
-  .entries {
-    width: calc(100% - 80px);
-    max-width: 800px;
-    margin: auto;
-    position: relative;
-    left: -5px;
+.timeline-event {
+  position: relative;
 
-    .entry {
-      width: calc(50% - 80px);
-      float: left;
-      padding: 20px;
-      clear: both;
-      text-align: right;
+  &:hover {
 
-      &:not(:first-child) {
-        margin-top: -60px;
-      }
+    .timeline-event-icon {
 
-      .title {
-        font-size: 32px;
-        margin-bottom: 12px;
-        position: relative;
-        color: #fff;
+      background-color: $color-3;
+    }
 
-        &:before {
-          content: '';
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          border: 4px solid #ffffff;
-          background-color: #1D1D1D;
-          border-radius: 100%;
-          top: 50%;
-          transform: translateY(-50%);
-          right: -73px;
-          z-index: 1000;
-        }
+    .timeline-event-thumbnail {
 
-        &.big:before {
-          width: 24px;
-          height: 24px;
-          transform: translate(8px, -50%);
-        }
-      }
-
-      .body {
-        color: #aaa;
-
-        p {
-          line-height: 1.4em;
-        }
-      }
-
-      &:nth-child(2n) {
-        text-align: left;
-        float: right;
-
-        .title {
-          &:before {
-            left: -63px;
-          }
-
-          &.big:before {
-            transform: translate(-8px, -50%);
-          }
-        }
-      }
     }
   }
+}
+
+.timeline-event-copy {
+  padding: 2em;
+  position: relative;
+  top: -1.875em;
+  left: 4em;
+  width: 80%;
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  p:not(.timeline-event-thumbnail) {
+    padding-bottom: 1.2em;
+  }
+}
+
+.timeline-event-icon {
+
+
+  background-color: $accent;
+  //outline: 10px solid $color-2;
+  display: block;
+  margin: 0.5em 0.5em 0.5em -0.5em;
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 20px;
+  border: solid 2px black;
+}
+
+.timeline-event-thumbnail {
+
+  color: $color-2;
+  font-size: 0.75em;
+
+  background-color: $color-1;
+
+  display: inline-block;
+  margin-bottom: 1.2em;
+  padding: 0.25em 1em 0.2em 1em;
 }
 </style>

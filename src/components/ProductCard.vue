@@ -8,7 +8,7 @@
       <img data-scrol :src="image"/>
     </div>
     <div class="row middle-xs">
-      <div class="prod-text start-xs col-xs-6 middle-xs">
+      <div class="prod-text start-xs col-lg-6 col-sm-12 col-md-12 middle-xs">
         <b class="title" v-if="(link === '')">
           <slot></slot>
         </b>
@@ -23,7 +23,7 @@
 
       </div>
 
-      <div class="col-xs-5 end-xs middle-xs badge-container">
+      <div class=" col-lg-5 col-sm-12 col-md-12 end-xs middle-xs badge-container">
         <div>
           <badge v-for="(badge, i) in badges" :class="{'badge-accent': (badge === 'Frontend' || badge === 'Backend')}" :key="i">{{ badge }}</badge>
         </div>
@@ -112,5 +112,11 @@ export default {
 .github-link{
   height: 2em;
   display: inline-block;
+}
+@media only screen and (min-width: 300px) and (max-width: 760px){
+  .prod-container{
+    padding: 0.1em;
+    margin: 10px 0;
+  }
 }
 </style>

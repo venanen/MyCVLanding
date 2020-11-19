@@ -2,12 +2,12 @@
   <div id="app">
 
     <AppContainer>
-      <HeroSection :id="1"/>
-      <ThirdSection :id="3"/>
-      <FourthSection :id="4"/>
-      <FifthSection :id="5"/>
+      <hero-section :id="1"/>
+      <skills-section :id="3"/>
+      <portfolio-section :id="4"/>
+      <additional-skils-section :id="5"/>
       <about-me-section :id="6"/>
-      <SecondSection :id="2"/>
+      <faq-section :id="2"/>
 
     </AppContainer>
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
@@ -23,12 +23,12 @@
 
 <script>
 import HeroSection from "@/layout/HeroSection";
-import SecondSection from "@/layout/SecondSection";
-import ThirdSection from "@/layout/ThirdSection";
-import FourthSection from "@/layout/FourthSection";
+import FaqSection from "@/layout/FaqSection";
+import SkillsSection from "@/layout/SkillsSection";
+import PortfolioSection from "@/layout/PortfolioSection";
 import AppContainer from "@/layout/AppContainer";
 import DosGame from "@/components/DosGame";
-import FifthSection from "@/layout/FifthSection";
+import AdditionalSkilsSection from "@/layout/AdditionalSkilsSection";
 import ImageBG from "@/components/ImageBG";
 import Loading from "@/components/Loading";
 import {mapGetters} from 'vuex';
@@ -37,15 +37,16 @@ import AboutMeSection from "@/layout/AboutMeSection";
 export default {
   name: 'App',
   components: {
+    SkillsSection,
     AboutMeSection,
     Loading,
     ImageBG,
-    FifthSection,
+    AdditionalSkilsSection,
     DosGame,
     AppContainer,
-    FourthSection,
-    ThirdSection,
-    SecondSection,
+    PortfolioSection,
+
+    FaqSection,
     HeroSection,
 
   },
