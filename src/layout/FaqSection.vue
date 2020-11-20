@@ -4,29 +4,15 @@
       <div class="bg"></div>
     </template>
     <div class="container-fluid">
+<!--      TODO: Не сделать прозрачнее-->
       <SectionTitle>Небольшое FAQ</SectionTitle>
 
       <div class="row">
-        <div class="col-lg-8">
-          <info-block :scroll="2" line="left">
-            <template v-slot:question>Зачем сайт? Почему не обычное pdf?</template>
-            Затем, чтобы чек кек чебурек
+        <div v-for="(item, i) in faqData" :key="i" :class="{'col-lg-8': true, 'col-lg-offset-4': (i%2===0)}">
+          <info-block :scroll="2" :line=" (i%2===0)?'right':'left'">
+            <template v-slot:question><div v-html="item.q"></div></template>
+            <div v-html="item.a"></div>
           </info-block>
-        </div>
-        <div class="col-lg-8 col-lg-offset-4">
-          <info-block :scroll="2" line="right">
-            <template v-slot:question>Зачем сайт? Почему не обычное pdf?</template>
-            Затем, чтобы чек кек чебурек
-          </info-block>
-        </div>
-        <div class="col-lg-8">
-          <info-block :scroll="2" line="left">
-            <template v-slot:question>Зачем сайт? Почему не обычное pdf?</template>
-            Затем, чтобы чек кек чебурек
-          </info-block>
-        </div>
-        <div data-scroll-direction="horizontal" data-scroll data-scroll-speed="3" @click="eventClickMe"
-             class="col-lg-12 clickMe">Клик💥
         </div>
       </div>
     </div>
@@ -38,7 +24,7 @@
 import Section from "@/components/Section"
 import InfoBlock from "@/components/InfoBlock";
 import SectionTitle from "@/components/SectionTitle";
-
+import faq from "@/data/faq";
 
 export default {
 
@@ -48,7 +34,8 @@ export default {
 
   },
   data: () => ({
-    sectionClass: false
+    sectionClass: false,
+    faqData: faq
   }),
   mounted: function () {
 
@@ -67,6 +54,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.small{
+  font: small-caption;
+}
 .bg {
   //background: $secondSection;
   width: 100%;
