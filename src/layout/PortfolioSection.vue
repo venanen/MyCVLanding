@@ -43,7 +43,7 @@ export default {
     prods: portfolioData
   }),
   props: {
-    id: Number,
+    id: String,
   }
 }
 </script>

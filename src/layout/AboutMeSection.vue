@@ -92,7 +92,7 @@ export default {
   name: "AboutMeSection",
   components: {TimeLine, Section, SectionTitle},
   props: {
-    id: Number,
+    id: String,
 
 
   },
@@ -178,6 +178,10 @@ section {
   img{
     width: 25vw;
     border-radius: 25vw;
+  }
+  #timeline-container {
+    max-height: initial;
+    overflow-y: auto;
   }
 }
 @keyframes img-pulse {

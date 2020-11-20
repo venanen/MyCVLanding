@@ -32,7 +32,7 @@ export default {
 
   components: {Chart, SectionTitle, Section},
   props: {
-    id: Number,
+    id: String,
   },
   data: () => ({
     hardSkills: skills.hardSkills,

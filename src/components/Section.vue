@@ -24,7 +24,7 @@ export default {
   },
 
   props: {
-    id: Number,
+    id: String,
     animated: {type: Boolean, default: true},
 
 

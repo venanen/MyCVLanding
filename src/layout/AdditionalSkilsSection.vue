@@ -22,7 +22,7 @@
         <div class="col-xs-8 col-sm-12">
           <div class="row">
             <div class="col-lg-8 col-sm-12">
-              <info-block :scroll="3" line="left">
+              <info-block :scroll="2" line="left">
                 <template v-slot:question>Программирование и безопасность</template>
                 Знаю
                 <badge>С/С++</badge>
@@ -45,7 +45,7 @@
               </info-block>
             </div>
             <div class="col-lg-8 col-lg-offset-4 col-sm-12">
-              <info-block :scroll="3" line="left">
+              <info-block :scroll="2" line="left">
                 <template v-slot:question>Разработка электроники</template>
                 Основная специальность в университете. Владею пакетами
                 <badge>SolidWorks</badge>
@@ -110,7 +110,7 @@ export default {
   }),
   components: {Badge, Chart, SectionTitle, Section, InfoBlock},
   props: {
-    id: Number,
+    id: String,
   }
 }
 </script>

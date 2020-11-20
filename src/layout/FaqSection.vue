@@ -44,7 +44,7 @@ export default {
 
   components: {SectionTitle, InfoBlock, Section},
   props: {
-    id: Number,
+    id: String,
 
   },
   data: () => ({

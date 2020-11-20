@@ -1,5 +1,5 @@
 <template>
-  <Section :id="this.id">
+  <Section :id="id">
     <template v-slot:background>
 
       <div class="bg">
@@ -33,7 +33,7 @@ export default {
   name: "HeroSection",
   components: {CenterContainer,   GameLife, Section},
   props: {
-    id: Number,
+    id: String,
   }
 }
 </script>
@@ -49,7 +49,7 @@ export default {
 
 .bg {
   background: #00000085;
-  width: 100%;
+  width: 120%;
   height: 100%;
 
 }

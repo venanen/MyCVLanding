@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{nightTheme: isNightTheme}">
 
     <AppContainer>
-      <hero-section :id="1"/>
-      <skills-section :id="3"/>
-      <portfolio-section :id="4"/>
-      <additional-skils-section :id="5"/>
-      <about-me-section :id="6"/>
-      <faq-section :id="2"/>
+      <hero-section id="hero"/>
+      <skills-section id="skills"/>
+      <portfolio-section id="portfolio"/>
+      <additional-skils-section id="add_skills"/>
+      <about-me-section id="about"/>
+      <faq-section id="faq"/>
 
     </AppContainer>
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
@@ -68,6 +68,9 @@ export default {
 
       return /digger/.test(this.location) && this.game;
     },
+    isNightTheme: ()=>(
+        (new Date()).getHours() >= 3 && (new Date()).getHours() <= 7
+    ),
     ...mapGetters([
       'isLoading'
       // ...
@@ -81,6 +84,8 @@ export default {
     },
     closeGame: function () {
       this.game = false;
+      window.location.hash = "";
+      window.location.reload();
     },
 
   }
@@ -98,7 +103,9 @@ export default {
   color: $color;
   //margin-top: 60px;
 }
-
+.nightTheme#app{
+  filter: grayscale(0.7) brightness(0.5);
+}
 body {
   margin: 0;
   height: 0;

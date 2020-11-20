@@ -20,7 +20,7 @@ export default {
   mounted: function () {
     //const canvas = document.getElementById('life');
     const canvas = this.$refs.canvas;
-    canvas.width = document.documentElement.clientWidth;
+    canvas.width = document.documentElement.clientWidth+60;
     canvas.height = canvas.parentElement.offsetHeight;
     //canvas.height =
     //console.log(canvas.parentElement, canvas.parentElement.offsetHeight)

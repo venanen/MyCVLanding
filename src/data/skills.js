@@ -7,9 +7,9 @@ const colorsBackground = [
     `#e39774${alpha}`,
     `#5c9ead${alpha}`,
     `#292f36${alpha}`,
-    `#ffffff${alpha}`,
+    `#f35f2f${alpha}`,
     `#ff6b6b${alpha}`,
-    `#ffffff${alpha}`
+    `#ff666f${alpha}`
 ].sort(() => Math.random() - 0.5)
 const option = {
     responsive: true,
