@@ -11,10 +11,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  background-color:$scroll;
-  transition: 1s ;
+  border-radius: 22em;
+  background-color: #FF5722;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 ::-webkit-scrollbar-thumb:hover{

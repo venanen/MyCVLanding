@@ -2,9 +2,9 @@
   <Section :id="id">
     <template v-slot:background>
 
-      <div class="bg">
+
         <GameLife/>
-      </div>
+
     </template>
     <div class="h100v w100v">
       <CenterContainer :fluid="true" :row="false">
@@ -51,6 +51,7 @@ export default {
   background: #00000085;
   width: 120%;
   height: 100%;
+  position: absolute;
 
 }
 

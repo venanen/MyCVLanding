@@ -1,24 +1,25 @@
 <template>
   <Section :id="this.id">
     <template v-slot:background>
-      <div class="bg"></div>
+
     </template>
-    <section-title><span id="hard-skills">Hard</span>/<span id="soft-skills">Soft</span> Skills</section-title>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6 col-xs-12 col-sm-12 col-lg-offset-134 chart-container">
-          <chart :chartdata="hardSkills.data" :options="hardSkills.option"/>
+    <div class="bg">
+      <section-title><span id="hard-skills">Hard</span>/<span id="soft-skills">Soft</span> Skills</section-title>
+      <div class="container-fluid">
+        <div class="row around-xs ">
+          <div class="col-lg-4 col-xs-12 col-sm-12 col-lg-offset-134 chart-container">
+            <chart :chartdata="hardSkills.data" :options="hardSkills.option"/>
+          </div>
+
+          <div class="col-lg-4 col-xs-12 col-sm-12 col-lg-offset-243 chart-container">
+            <chart :chartdata="softSkills.data" :options="softSkills.option"/>
+          </div>
+
+          <a id="digger" title="Start digger game" href="#digger">🕹</a>
+
         </div>
-
-        <div class="col-lg-6 col-xs-12 col-sm-12 col-lg-offset-243 chart-container">
-          <chart :chartdata="softSkills.data" :options="softSkills.option"/>
-        </div>
-
-        <a id="digger" title="Start digger game" href="#digger">🕹</a>
-
       </div>
     </div>
-
   </Section>
 </template>
 
@@ -58,22 +59,23 @@ $soft-hard-time: 1s;
   animation-timing-function: ease-in-out;
 
 }
+
 @keyframes digger {
-  0%{
+  0% {
     transform: scale(1) rotate(0turn);
     opacity: 0.5;
 
 
   }
-  33%{
+  33% {
     transform: scale(1.4) rotate(20deg);
     opacity: 0.7;
   }
-  66%{
+  66% {
     transform: scale(1.4) rotate(-20deg);
     opacity: 0.7;
   }
-  100%{
+  100% {
     transform: scale(1) rotate(0turn);
     opacity: 0.5;
   }

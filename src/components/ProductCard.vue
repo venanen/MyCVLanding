@@ -82,8 +82,8 @@ export default {
 }
 .prod-container:hover {
 
-  transform: translate(-15px, -15px);
-  box-shadow: #00000052 20px 20px 4px 0;
+  transform: scale(1.01);
+  box-shadow: #00000052 19px 20px 5px 0;
 
 }
 

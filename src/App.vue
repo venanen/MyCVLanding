@@ -1,6 +1,6 @@
 <template>
   <div id="app" :class="{nightTheme: isNightTheme}">
-
+    <ImageBG/>
     <AppContainer>
       <hero-section id="hero"/>
       <skills-section id="skills"/>
@@ -12,7 +12,7 @@
     </AppContainer>
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
     <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
-    <ImageBG/>
+
     <transition name="fade">
 
       <Loading key="main-loading" v-if="!isLoading"/>
@@ -68,7 +68,7 @@ export default {
 
       return /digger/.test(this.location) && this.game;
     },
-    isNightTheme: ()=>(
+    isNightTheme: () => (
         (new Date()).getHours() >= 3 && (new Date()).getHours() <= 7
     ),
     ...mapGetters([
@@ -103,12 +103,15 @@ export default {
   color: $color;
   //margin-top: 60px;
 }
-.nightTheme#app{
+
+.nightTheme#app {
   filter: grayscale(0.7) brightness(0.5);
 }
+
 body {
   margin: 0;
   height: 0;
+  overflow-x: hidden;
 }
 
 .close {

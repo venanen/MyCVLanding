@@ -39,7 +39,7 @@ export default {
   font-size: 1.6em;
   /* opacity: 0.8; */
 
-  line-height: 0.9em;
+  line-height: 1.1em;
   text-align: justify;
   border: $accent solid 1px;
   text-shadow: 1px 1px 1px black;

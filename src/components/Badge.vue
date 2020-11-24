@@ -22,4 +22,7 @@ name: "Badge"
 .badge-accent{
   background: $first;
 }
+.badges.inline{
+  padding: 0.2em;
+}
 </style>

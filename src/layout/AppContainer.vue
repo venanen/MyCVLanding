@@ -28,9 +28,9 @@ export default {
       const _self = this;
       this.scroll = new LocomotiveScroll({
         el: _self.$refs['scrollSections'],
-        smooth: true,
-        smoothMobile: true,
-        getDirection: true
+        smooth: /smooth/.test(window.location.hash),
+        //smoothMobile: true,
+        //getDirection: true
       });
       window.loco = this.scroll;
 

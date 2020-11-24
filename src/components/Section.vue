@@ -50,10 +50,10 @@ export default {
 <style lang="scss" scoped>
 
 #sectionBackground {
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  position: absolute;
+  //position: absolute;
 }
 
 section {
@@ -62,7 +62,10 @@ section {
   //height: 100vh;
   overflow: hidden;
 }
-
+.sectionMainContent{
+ //position: absolute;
+  z-index: 2;
+}
 #sectionMainContent.animated {
   z-index: 1;
   height: 100%;
