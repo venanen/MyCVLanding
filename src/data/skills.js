@@ -1,3 +1,4 @@
+import core from "@/core/core";
 const alpha = "CC";
 const colorsBackground = [
     `#5c9ead${alpha}`,
@@ -8,11 +9,11 @@ const colorsBackground = [
     `#5c9ead${alpha}`,
     `#292f36${alpha}`,
     `#f35f2f${alpha}`,
-    `#ff6b6b${alpha}`,
-    `#ff666f${alpha}`
+    `#ac6b6b${alpha}`,
+    `#bb666f${alpha}`
 ].sort(() => Math.random() - 0.5)
 const option = {
-    responsive: true,
+    responsive: core.isMobile(),
     legend: {
         labels: {
             fontColor: 'whitesmoke'

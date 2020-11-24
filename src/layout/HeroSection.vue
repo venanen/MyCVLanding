@@ -6,7 +6,7 @@
         <GameLife/>
 
     </template>
-    <div class="h100v w100v">
+    <div class="h100v w100v bg">
       <CenterContainer :fluid="true" :row="false">
         <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме</h1>
         <h2 data-scroll data-scroll-speed="4" class="secondTitle"><i>На позицию WEB разработчика</i></h2>
@@ -49,9 +49,7 @@ export default {
 
 .bg {
   background: #00000085;
-  width: 120%;
-  height: 100%;
-  position: absolute;
+
 
 }
 
