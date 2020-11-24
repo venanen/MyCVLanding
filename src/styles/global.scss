@@ -76,3 +76,9 @@ html.has-scroll-smooth {
   50%  { transform: rotate(5deg);  }
   100% { transform: rotate(10deg) ;     }
 }
+body{
+  margin: 0;
+  /* height: 0; */
+  overflow-x: hidden;
+  width: 100vw;
+}

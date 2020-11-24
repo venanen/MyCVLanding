@@ -8,7 +8,7 @@
     </template>
     <div class="bg">
       <section-title data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
-        Дополнительные скилы {{hash}}
+        Дополнительные скилы {{ hash }}
       </section-title>
       <div>
 
@@ -16,10 +16,8 @@
       </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-4 col-sm-12">
-            <chart :chartdata="addedSkills.data" :options="addedSkills.option"/>
-          </div>
-          <div class="col-xs-8 col-sm-12">
+
+          <div class="col-xs-12 col-sm-12">
             <div class="row">
               <div class="col-lg-8 col-sm-12">
                 <info-block :scroll="2" line="left">
@@ -44,7 +42,12 @@
                   и даже зарепортил две уязвимости
                 </info-block>
               </div>
-              <div class="col-lg-8 col-lg-offset-4 col-sm-12">
+            </div>
+            <div class="row middle-lg">
+              <div class="col-lg-4 col-sm-12">
+                <chart :chartdata="addedSkills.data" :options="addedSkills.option"/>
+              </div>
+              <div class="col-lg-8  col-sm-12">
                 <info-block :scroll="2" line="left">
                   <template v-slot:question>Разработка электроники</template>
                   Основная специальность в университете. Владею пакетами
@@ -66,29 +69,34 @@
                   при написании документации
                 </info-block>
               </div>
-              <div class="col-lg-8 col-sm-12">
-                <info-block :scroll="2" line="left">
-                  <template v-slot:question>Фотография</template>
-                  Основное хобби. Снимаю
-                  <badge class="inline">пейзажи</badge>
-                  ,
-                  <badge class="inline">портреты</badge>
-                  ,
-                  <badge class="inline">астро-</badge>
-                  и
-                  <badge class="inline">макро</badge>
-                  фотографии, и все, что подвернется под руку. Фотография, которая сейчас на заднем плане -
-                  <badge class="inline">победитель</badge>
-                  всероссийского конкурса фотографий и висела в Ботаническом саду, чем я очень горжусь :)
-                </info-block>
-              </div>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-sm-12">
+              <info-block :scroll="2" line="left">
+                <template v-slot:question>Фотография</template>
+                Основное хобби. Снимаю
+                <badge class="inline">пейзажи</badge>
+                ,
+                <badge class="inline">портреты</badge>
+                ,
+                <badge class="inline">астро-</badge>
+                и
+                <badge class="inline">макро</badge>
+                фотографии, и все, что подвернется под руку. Фотография, которая сейчас на заднем плане -
+                <badge class="inline">победитель</badge>
+                всероссийского конкурса фотографий и висела в Ботаническом саду, чем я очень горжусь :)
+              </info-block>
             </div>
           </div>
-
-
         </div>
+
+
       </div>
     </div>
+
 
 
   </Section>
