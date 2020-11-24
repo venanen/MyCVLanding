@@ -13,7 +13,7 @@ const colorsBackground = [
     `#bb666f${alpha}`
 ].sort(() => Math.random() - 0.5)
 const option = {
-    responsive: core.isMobile(),
+    responsive: !core.isMobile(),
     legend: {
         labels: {
             fontColor: 'whitesmoke'
