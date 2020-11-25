@@ -8,7 +8,7 @@
     </template>
     <div class="h100v w100v bg">
       <CenterContainer :fluid="true" :row="false">
-        <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме</h1>
+        <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме </h1>
         <h2 data-scroll data-scroll-speed="4" class="secondTitle"><i>На позицию WEB разработчика</i></h2>
         <h5 data-scroll data-scroll-speed="6" class="secondTitle"><i>Да, в виде сайта. Но зато креативно </i>😎</h5>
       </CenterContainer>

@@ -2,6 +2,7 @@
   <div id="app" :class="{nightTheme: isNightTheme}">
     <ImageBG/>
     <AppContainer>
+
       <hero-section id="hero"/>
       <skills-section id="skills"/>
       <portfolio-section id="portfolio"/>
@@ -11,6 +12,7 @@
       <about-company-section id="company"/>
 
     </AppContainer>
+
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
     <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
 

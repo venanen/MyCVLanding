@@ -8,6 +8,7 @@ module.exports = {
                     @import "src/styles/flexboxgrid";
                     @import "src/milligram/milligram";
                     @import "src/plugins/locomotive/locomotive";
+                    @import "src/styles/icofont";
                 `
             }
         }
