@@ -3,15 +3,15 @@
     <div class="bg">
       <section-title>Компания мечты и контакты</section-title>
 
-      <div class="row start-lg">
-        <div class="col-lg-5 col-lg-offset-1">
+      <div class="row start-lg center-sm center-md">
+        <div class=" col-sm-12 col-lg-5 col-lg-offset-1">
           хотелось бы<h2>Условия </h2>
           <ol>
             <li v-for="(item, i) in company" :key="i"><b> {{ item.point }}</b> - {{ item.text }}</li>
 
           </ol>
         </div>
-        <div class="col-lg-5 col-lg-offset-1">
+        <div class=" col-sm-12 col-lg-5 col-lg-offset-1">
           если вы заинтересовались, то вот
           <h2>Контакты</h2>
           <ol>
@@ -60,7 +60,7 @@ h4{
 }
 section {
   /* TODO: remove */
-  height: 100vh;
+
 }
 
 li {
