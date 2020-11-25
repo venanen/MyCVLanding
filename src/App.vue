@@ -8,6 +8,7 @@
       <additional-skils-section id="add_skills"/>
       <about-me-section id="about"/>
       <faq-section id="faq"/>
+      <about-company-section id="company"/>
 
     </AppContainer>
     <div v-if="playingDoom" @click="closeGame" class="close">close</div>
@@ -33,10 +34,12 @@ import ImageBG from "@/components/ImageBG";
 import Loading from "@/components/Loading";
 import {mapGetters} from 'vuex';
 import AboutMeSection from "@/layout/AboutMeSection";
+import AboutCompanySection from "@/layout/AboutCompanySection";
 
 export default {
   name: 'App',
   components: {
+    AboutCompanySection,
     SkillsSection,
     AboutMeSection,
     Loading,

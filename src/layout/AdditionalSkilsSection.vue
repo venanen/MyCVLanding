@@ -2,10 +2,6 @@
 
 
   <Section :id="this.id">
-    <template v-slot:background>
-
-
-    </template>
     <div class="bg">
       <section-title data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
         Дополнительные скилы {{ hash }}

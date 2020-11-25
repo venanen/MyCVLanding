@@ -46,7 +46,7 @@ export default {
 <style scoped lang="scss">
 $soft-hard-time: 1s;
 #digger {
-  position: fixed;
+  position: absolute;
   bottom: 1em;
   right: 1em;
   opacity: 0.3;

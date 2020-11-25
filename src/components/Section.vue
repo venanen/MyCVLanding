@@ -1,6 +1,6 @@
 <template>
   <section data-scroll data-scroll-section :id="idSection" :class="`contentSection`">
-    <div id="sectionBackground">
+    <div id="sectionBackground" v-if="customBg">
       <slot name="background">
       </slot>
     </div>
@@ -26,6 +26,7 @@ export default {
   props: {
     id: String,
     animated: {type: Boolean, default: true},
+    customBg: {type: Boolean, default: true}
 
 
 
