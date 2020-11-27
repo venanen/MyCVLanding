@@ -20,7 +20,6 @@
 </template>
 
 <script>
-//TODO разобраться с этой фигней и таймлайном
 
 
 export default {

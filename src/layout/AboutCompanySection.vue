@@ -28,7 +28,6 @@
 
 <script>
 
-//TODO заменить на this.$dataCV
 import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -45,20 +44,15 @@ export default {
 .bg {
   background: #1c1c1c;
   height: 100%;
-
 }
-
 h4 {
   color: white;
   background: black;
   font-family: ui-rounded, serif;
 }
-
 section {
-  /* TODO: remove */
 
 }
-
 li {
   font-size: 2em;
 }

@@ -1,5 +1,6 @@
 <template>
   <div id="app" :class="{nightTheme: isNightTheme}">
+    <navbar :data="sections" v-if="!this.$core.isMobile()"/>
     <ImageBG/>
     <AppContainer :smooth="this.$core.isUseSmooth()">
 
@@ -37,10 +38,12 @@ import Loading from "@/components/Loading";
 import {mapGetters} from 'vuex';
 import AboutMeSection from "@/layout/AboutMeSection";
 import AboutCompanySection from "@/layout/AboutCompanySection";
+import Navbar from "@/components/Navbar";
 
 export default {
   name: 'App',
   components: {
+    Navbar,
     AboutCompanySection,
     SkillsSection,
     AboutMeSection,
@@ -58,6 +61,34 @@ export default {
   data: () => ({
     game: true,
     location: window.location.hash,
+    sections: [
+      {
+        name: 'Skills',
+        anchor: 'skills'
+      },
+      {
+        name: 'Портфолио',
+        anchor: 'portfolio'
+      },
+      {
+        name: '3d-party skills',
+        anchor: 'add_skills'
+      },
+      {
+        name: 'Обо мне',
+        anchor: 'about'
+      },
+      {
+        name: 'FAQ',
+        anchor: 'faq'
+      },
+      {
+        name: 'О компании/Контакты',
+        anchor: 'company'
+      },
+
+
+    ]
 
   }),
   mounted() {

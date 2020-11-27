@@ -11,9 +11,8 @@
  
   font-family: "IcoFont";
 font-weight: normal;
-/*font-style: "Regular"
-src: url("@/styles/font/icofont.woff2") format("woff2"),
-url("@/styles/font/icofont.woff") format("woff");;*/
+/*font-style: "Regular"*/
+src: url("/icofont.woff2") format("woff2")
 }
 
 [class^="icofont-"], [class*=" icofont-"]
