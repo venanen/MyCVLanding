@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-lg-6 col-xs-12">
             <div id="about-me-info">
-              <img src="/me.jpg">
+              <img alt="me" src="/me.jpg">
               <h1>Исаев Иван Викторович</h1>
               <h4>[если вы дочитали до этого момента, то время рассказать о себе]</h4>
               <div id="about-me-text">
@@ -36,7 +36,7 @@
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp; Свой первый полноценный сайт создал в <b>2014 году</b>, до наших дней он, к
                   сожалению,
-                  не сохранился, но <a target="_blank"
+                  не сохранился, но <a target="_blank" rel="noreferrer"
                                        href="http://web-old.archive.org/web/20150801170416/http://grandray.ru/">интернет
                   все помнит</a>.
                   Затем работал без официального оформления, а затем и вовсе на фрилансе, на стандартном по тем временам
@@ -46,7 +46,7 @@
                   &nbsp;&nbsp;&nbsp;&nbsp; После поступления в университет, времени на работу на фрилансе почти не
                   оставалось, поэтому занимался локальными проектами "для себя" <i>(ничего значимого для мира я не
                   изобрел, поэтому все репозитории из
-                  <a target="_blank" href="https://github.com/venanen/">github</a> потер)</i>. После 3 курса времени
+                  <a target="_blank" rel="noreferrer" href="https://github.com/venanen/">github</a> потер)</i>. После 3 курса времени
                   стало больше, и я
                   начал изучать современные стеки разработки, из современных фреймворков я изучил <b>React</b> и
                   <b>Vue</b>, последний считаю наиболее удачным и интуитивно понятным.
@@ -57,7 +57,7 @@
                   гитаре и изучаю пакеты <b>Anacondas</b> и <b>TensorFlow</b> на <b>python3</b>. Иногда от скуки
                   перевожу
                   статьи на
-                  <a target="_blank" href="https://developer.mozilla.org/ru/profiles/venanen">MDN</a>.
+                  <a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/ru/profiles/venanen">MDN</a>.
                 </p>
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp; Задно оставлю ссылку на контакты
@@ -66,7 +66,7 @@
                 <div class="row center-md around-lg between-md around-xs">
                   <!--                TODO заменить иконками -->
                   <div v-for="(item, i) in contacts" :key="i" class="col">
-                    <a :href="item.link" target="_blank">{{ item.name }}</a>
+                    <a :href="item.link" rel="noreferrer" target="_blank">{{ item.name }}</a>
                   </div>
                 </div>
               </div>
@@ -77,7 +77,7 @@
             <!--          @touchstart="disableLoco" @touchend="enableLoco"-->
             <div id="timeline-container"
                 >
-              <TimeLine/>
+              <TimeLine :data-timeline="this.$usesData.timeline"/>
             </div>
           </div>
         </div>
@@ -106,15 +106,6 @@ export default {
   data: () => ({
     contacts
   }),
-  methods: {
-    enableLoco: function () {
-      //console.log(contacts)
-      window.loco.start()
-    },
-    disableLoco: () => {
-      window.loco.stop()
-    }
-  }
 }
 </script>
 

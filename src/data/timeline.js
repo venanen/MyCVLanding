@@ -1,5 +1,4 @@
-export default {
-    dataTimeline: [
+export default [
         {
             year: 1999,
             head: "Родился",
@@ -54,5 +53,5 @@ export default {
 
 
 
-    ]
-}
+
+]

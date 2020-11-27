@@ -4,7 +4,7 @@
 
 
     <ul class="timeline">
-      <li v-for="(item, i) in data" :key="i" class="timeline-event">
+      <li v-for="(item, i) in dataTimeline" :key="i" class="timeline-event">
         <label class="timeline-event-icon"></label>
         <div class="timeline-event-copy">
           <p class="timeline-event-thumbnail">{{ item.year}}</p>
@@ -21,13 +21,13 @@
 
 <script>
 //TODO разобраться с этой фигней и таймлайном
-import timeline from "@/data/timeline";
+
 
 export default {
-  data: () => ({
-    data: timeline.dataTimeline,
-  }),
-  name: "TimeLine"
+  name: "TimeLine",
+  props: {
+    dataTimeline: Array
+  }
 }
 </script>
 

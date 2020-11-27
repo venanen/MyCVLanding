@@ -1,4 +1,11 @@
+import GameLife from "./lifeCore";
+import initialPixels from "@/plugins/Life/initialPixels";
 class Core {
+    constructor(GameLife) {
+        this.hash = window.location.hash;
+        this._gameLife = GameLife;
+        this.life = {} //instance of GameLifeController
+    }
     rnd(min, max) {
         let rand = min + Math.random() * (max - min);
         return Math.round(rand);
@@ -39,6 +46,44 @@ class Core {
             return navigator.userAgent.match(toMatchItem);
         });
     }
-}
+    isLifeRun(){
+        return !(/disablelife/.test(this.hash));
+    }
+    isUseSmooth(){
+        return /smooth/.test(this.hash)
+    }
 
-export default new Core;
+    mountGameLife(canvas){
+        canvas.width = document.documentElement.clientWidth+60;
+        canvas.height = canvas.parentElement.offsetHeight;
+        let frameControl = 2,
+            frameCurrent = 0;
+
+        const gL = new this._gameLife(canvas);
+        gL.setStep(40);
+        gL.import(initialPixels);
+        canvas.addEventListener('mousedown', function (e) {
+            gL.setPixelsByMouse(e);
+        })
+        // eslint-disable-next-line no-unused-vars
+        let animation = "";
+        this.life.start = () => {
+
+            if (frameCurrent++ > frameControl) {
+                frameCurrent = 0;
+                gL.tick()
+            }
+            animation = window.requestAnimationFrame(this.life.start)
+        }
+
+        this.life.stop = () => {
+            window.cancelAnimationFrame(animation);
+        }
+        this.life.reset = () => {
+            gL.reset();
+        }
+        this.life.start();
+    }
+}
+let core = new Core(GameLife);
+export default core;

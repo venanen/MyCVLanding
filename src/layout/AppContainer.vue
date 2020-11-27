@@ -12,7 +12,8 @@ export default {
   name: "AppContainer",
   components: {},
   props: {
-    msg: String
+    msg: String,
+    smooth: Boolean
   },
   data() {
     return {
@@ -28,7 +29,7 @@ export default {
       const _self = this;
       this.scroll = new LocomotiveScroll({
         el: _self.$refs['scrollSections'],
-        smooth: /smooth/.test(window.location.hash),
+        smooth: this.smooth,
         //smoothMobile: true,
         //getDirection: true
       });

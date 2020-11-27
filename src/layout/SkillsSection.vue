@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row around-xs ">
           <div class="col-lg-4 col-xs-12 col-sm-12 col-lg-offset-134 chart-container">
-            <chart :chartdata="hardSkills.data" :options="hardSkills.option"/>
+            <chart :chartdata="this.hardSkills.data" :options="hardSkills.option"/>
           </div>
 
           <div class="col-lg-4 col-xs-12 col-sm-12 col-lg-offset-243 chart-container">
@@ -27,7 +27,6 @@
 import Section from "@/components/Section"
 import SectionTitle from "@/components/SectionTitle";
 import Chart from "@/components/Chart";
-import skills from "@/data/skills";
 
 export default {
 
@@ -35,11 +34,12 @@ export default {
   props: {
     id: String,
   },
-  data: () => ({
-    hardSkills: skills.hardSkills,
-    softSkills: skills.softSkills
-
-  })
+  data: function () {
+    return {
+      hardSkills: this.$usesData.skills.hardSkills,
+      softSkills: this.$usesData.skills.softSkills
+    }
+  }
 }
 </script>
 

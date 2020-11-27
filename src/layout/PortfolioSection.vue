@@ -30,19 +30,15 @@
 import Section from "@/components/Section"
 import SectionTitle from "@/components/SectionTitle";
 import ProductCard from "@/components/ProductCard";
-import portfolioData from "@/data/portfolio";
+
 
 export default {
-  mounted() {
-    //TODO delete this
-    this.$nextTick(() => {
-      window.loco.update();
-    })
-  },
   components: {ProductCard, SectionTitle, Section},
-  data: () => ({
-    prods: portfolioData
-  }),
+  data: function () {
+    return {
+      prods: this.$usesData.portfolio
+    }
+  },
   props: {
     id: String,
   }

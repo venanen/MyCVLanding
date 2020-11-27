@@ -9,7 +9,7 @@
         <section-title>Небольшое FAQ</section-title>
 
         <div class="row">
-          <div v-for="(item, i) in faqData" :key="i" :class="{'col-lg-8': true, 'col-lg-offset-4': (i%2===0)}">
+          <div v-for="(item, i) in this.$usesData.faq" :key="i" :class="{'col-lg-8': true, 'col-lg-offset-4': (i%2===0)}">
             <info-block :scroll="2" :line=" (i%2===0)?'right':'left'">
               <template v-slot:question>
                 <div v-html="item.q"></div>
@@ -28,7 +28,6 @@
 import Section from "@/components/Section"
 import InfoBlock from "@/components/InfoBlock";
 import SectionTitle from "@/components/SectionTitle";
-import faq from "@/data/faq";
 
 export default {
 
@@ -39,7 +38,7 @@ export default {
   },
   data: () => ({
     sectionClass: false,
-    faqData: faq
+
   }),
   mounted: function () {
 

@@ -1,14 +1,11 @@
 <template>
   <Section :id="id">
     <template v-slot:background>
-
-
-        <GameLife/>
-
+      <GameLife :is-life-run="isLifeRun"/>
     </template>
     <div class="h100v w100v bg">
       <CenterContainer :fluid="true" :row="false">
-        <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме </h1>
+        <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме</h1>
         <h2 data-scroll data-scroll-speed="4" class="secondTitle"><i>На позицию WEB разработчика</i></h2>
         <h5 data-scroll data-scroll-speed="6" class="secondTitle"><i>Да, в виде сайта. Но зато креативно </i>😎</h5>
       </CenterContainer>
@@ -31,17 +28,19 @@ import CenterContainer from "@/components/CenterContainer";
 
 export default {
   name: "HeroSection",
-  components: {CenterContainer,   GameLife, Section},
+  components: {CenterContainer, GameLife, Section},
+
   props: {
     id: String,
+    isLifeRun: Boolean
   }
 }
 </script>
 
 <style scoped lang="scss">
 
-.tips{
-  position: fixed;
+.tips {
+  position: absolute;
   bottom: -2px;
   right: 0;
   left: 0;
@@ -53,17 +52,18 @@ export default {
 
 }
 
-.mainTitle{
+.mainTitle {
   font-size: 10em;
   font-weight: 200;
   text-shadow: black 1px 1px 2px;
 }
 
-.secondTitle{
+.secondTitle {
   opacity: 0.8;
 }
-@media only screen and (min-width: 300px) and (max-width: 760px){
-  .mainTitle{
+
+@media only screen and (min-width: 300px) and (max-width: 760px) {
+  .mainTitle {
     font-size: 5em;
     font-weight: 200;
     text-shadow: black 1px 1px 2px;

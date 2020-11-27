@@ -6,8 +6,8 @@ const colorsBackground = [
     `#326273${alpha}`,
     `#eeeeee${alpha}`,
     `#e39774${alpha}`,
-    `#5c9ead${alpha}`,
-    `#292f36${alpha}`,
+    `#9965f4${alpha}`,
+    `#ee4fa6${alpha}`,
     `#f35f2f${alpha}`,
     `#ac6b6b${alpha}`,
     `#bb666f${alpha}`

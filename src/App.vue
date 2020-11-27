@@ -1,9 +1,9 @@
 <template>
   <div id="app" :class="{nightTheme: isNightTheme}">
     <ImageBG/>
-    <AppContainer>
+    <AppContainer :smooth="this.$core.isUseSmooth()">
 
-      <hero-section id="hero"/>
+      <hero-section :is-life-run="this.$core.isLifeRun()" id="hero"/>
       <skills-section id="skills"/>
       <portfolio-section id="portfolio"/>
       <additional-skils-section id="add_skills"/>
@@ -13,8 +13,8 @@
 
     </AppContainer>
 
-    <div v-if="playingDoom" @click="closeGame" class="close">close</div>
-    <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDoom"/>
+    <div v-if="playingDOS" @click="closeGame" class="close">close</div>
+    <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDOS"/>
 
     <transition name="fade">
 
@@ -69,7 +69,7 @@ export default {
 
   },
   computed: {
-    playingDoom: function () {
+    playingDOS: function () {
 
       return /digger/.test(this.location) && this.game;
     },

@@ -7,7 +7,7 @@
         <div class=" col-sm-12 col-lg-5 col-lg-offset-1">
           хотелось бы<h2>Условия </h2>
           <ol>
-            <li v-for="(item, i) in company" :key="i"><b> {{ item.point }}</b> - {{ item.text }}</li>
+            <li v-for="(item, i) in this.$usesData.company" :key="i"><b> {{ item.point }}</b> - {{ item.text }}</li>
 
           </ol>
         </div>
@@ -15,7 +15,7 @@
           если вы заинтересовались, то вот
           <h2>Контакты</h2>
           <ol>
-            <li v-for="(item, i) in contacts" :key="i"><a :href="item.link">{{ item.name }}</a></li>
+            <li v-for="(item, i) in this.$usesData.contacts" :key="i"><a :href="item.link">{{ item.name }}</a></li>
 
           </ol>
         </div>
@@ -29,8 +29,6 @@
 <script>
 
 //TODO заменить на this.$dataCV
-import contacts from "@/data/contacts";
-import company from "@/data/company";
 import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -40,10 +38,6 @@ export default {
   props: {
     id: String,
   },
-  data: () => ({
-    company,
-    contacts
-  })
 }
 </script>
 
@@ -53,11 +47,13 @@ export default {
   height: 100%;
 
 }
-h4{
+
+h4 {
   color: white;
   background: black;
   font-family: ui-rounded, serif;
 }
+
 section {
   /* TODO: remove */
 

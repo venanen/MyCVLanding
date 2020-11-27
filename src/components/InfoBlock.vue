@@ -20,8 +20,7 @@ export default {
     line: String,
     scroll: Number,
     fixed: Boolean
-    //position: Object,
-    //background: String,
+
 
   }
 }
@@ -37,7 +36,7 @@ export default {
   border-radius: 8px;
   color: whitesmoke;
   font-size: 1.6em;
-  /* opacity: 0.8; */
+
 
   line-height: 1.1em;
   text-align: justify;
@@ -71,13 +70,16 @@ export default {
   border-radius: 2px;
   padding-left: 6px;
 }
-@media only screen and (min-width: 300px) and (max-width: 760px){
-  .info{
+
+@media only screen and (min-width: 300px) and (max-width: 760px) {
+  .info {
     font-size: 1em;
   }
-  .unfixed{
+  .unfixed {
     width: 90%;
   }
-
+  .question {
+    font-size: 2.5rem;
+  }
 }
 </style>

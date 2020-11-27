@@ -4,7 +4,7 @@
   <Section :id="this.id">
     <div class="bg">
       <section-title data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
-        Дополнительные скилы {{ hash }}
+        Дополнительные скилы
       </section-title>
       <div>
 
@@ -15,7 +15,7 @@
 
           <div class="col-xs-12 col-sm-12">
             <div class="row">
-              <div class="col-lg-8 col-sm-12">
+              <div class="col-lg-12 col-sm-12">
                 <info-block :scroll="2" line="left">
                   <template v-slot:question>Программирование и безопасность</template>
                   Знаю
@@ -44,7 +44,7 @@
                 <chart :chartdata="addedSkills.data" :options="addedSkills.option"/>
               </div>
               <div class="col-lg-8  col-sm-12">
-                <info-block :scroll="2" line="left">
+                <info-block :scroll="2" line="right">
                   <template v-slot:question>Разработка электроники</template>
                   Основная специальность в университете. Владею пакетами
                   <badge class="inline">SolidWorks</badge>
@@ -66,33 +66,30 @@
                 </info-block>
               </div>
             </div>
-
-
-          </div>
-          <div class="row">
-            <div class="col-lg-8 col-sm-12">
-              <info-block :scroll="2" line="left">
-                <template v-slot:question>Фотография</template>
-                Основное хобби. Снимаю
-                <badge class="inline">пейзажи</badge>
-                ,
-                <badge class="inline">портреты</badge>
-                ,
-                <badge class="inline">астро-</badge>
-                и
-                <badge class="inline">макро</badge>
-                фотографии, и все, что подвернется под руку. Фотография, которая сейчас на заднем плане -
-                <badge class="inline">победитель</badge>
-                всероссийского конкурса фотографий и висела в Ботаническом саду, чем я очень горжусь :)
-              </info-block>
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                <info-block :scroll="2" line="left">
+                  <template v-slot:question>Фотография</template>
+                  Основное хобби. Снимаю
+                  <badge class="inline">пейзажи</badge>
+                  ,
+                  <badge class="inline">портреты</badge>
+                  ,
+                  <badge class="inline">астро-</badge>
+                  и
+                  <badge class="inline">макро</badge>
+                  фотографии, и все, что подвернется под руку. Фотография, которая сейчас на заднем плане -
+                  <badge class="inline">победитель</badge>
+                  всероссийского конкурса фотографий и висела в Ботаническом саду, чем я очень горжусь :)
+                </info-block>
+              </div>
             </div>
+
           </div>
+
         </div>
-
-
       </div>
     </div>
-
 
 
   </Section>
@@ -103,19 +100,14 @@ import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
 import InfoBlock from "@/components/InfoBlock";
 import Chart from "@/components/Chart";
-import skills from "@/data/skills";
 import Badge from "@/components/Badge";
 
 export default {
   name: "AdditionalSkilsSection",
-  //TODO delete array
-  data: () => ({
-    backgrounds: [1],//[1,2,3,4,5,6,7,8,9,10]
-    addedSkills: skills.addedSkills,
-    hash: window.location.hash
+  data: function () {
+    return {addedSkills: this.$usesData.skills.addedSkills,}
 
-
-  }),
+  },
   components: {Badge, Chart, SectionTitle, Section, InfoBlock},
   props: {
     id: String,
@@ -142,7 +134,6 @@ section {
 }
 
 .bg {
-  //position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
