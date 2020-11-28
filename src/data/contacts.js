@@ -1,6 +1,6 @@
 export default [//TODO add icons 
     {name: "GitHub", link: "https://github.com/venanen"},
-    {name: 'Habr Carrier', link: 'https://career.habr.com/venanen'},
+    {name: 'Habr Career', link: 'https://career.habr.com/venanen'},
     {name: 'HedHunter', link: 'https://hh.ru/resume/26cab889ff072647470039ed1f724852656368'},
     {name: "Linkdin", link: "https://www.linkedin.com/mwlite/in/isaev-ivan-2a0000200"},
     {name: "MDN", link: "https://developer.mozilla.org/ru/profiles/venanen"},
