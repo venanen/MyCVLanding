@@ -1,15 +1,35 @@
 <template>
   <div class="h100v w100v">
-    <div class="crunch_loading" id="crunch_container" style="">
-      <img id="crunch1" class="crunch_loading" src="/crutch.png"/>
-      <img id="crunch2" class="crunch_loading" src="/crutch.png"/>
-      <img id="crunch3" class="crunch_loading" src="/crutch.png"/>
-      <img id="crunch4" class="crunch_loading" src="/crutch.png"/>
-
+    <div
+      class="crunch_loading"
+      id="crunch_container"
+      style=""
+    >
+      <img
+        id="crunch1"
+        class="crunch_loading"
+        src="/crutch.png"
+      >
+      <img
+        id="crunch2"
+        class="crunch_loading"
+        src="/crutch.png"
+      >
+      <img
+        id="crunch3"
+        class="crunch_loading"
+        src="/crutch.png"
+      >
+      <img
+        id="crunch4"
+        class="crunch_loading"
+        src="/crutch.png"
+      >
     </div>
-    <p class="crunch_loading_text">Подождите...</p>
+    <p class="crunch_loading_text">
+      Подождите...
+    </p>
   </div>
-
 </template>
 
 <script>

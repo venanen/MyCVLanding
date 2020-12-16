@@ -1,5 +1,7 @@
 <template>
-  <div class="subSection"><slot></slot></div>
+  <div class="subSection">
+    <slot />
+  </div>
 </template>
 
 <script>

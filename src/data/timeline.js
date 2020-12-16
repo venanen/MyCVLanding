@@ -6,12 +6,12 @@ export default [
     },
     {
         year: 2014,
-        head: "Первый полноценный сайт игрового сервера Grandray",
+        head: "Работа на игровом проекте Grandray в качестве Full-Stack Developer",
         text: ""
     },
     {
         year: 2015,
-        head: "Разработка и поддержка интернет магазина Dealsport",
+        head: "Работа в интернет магазине Dealsport в качестве Full-Stack Developer ",
         text: ""
     },
     {
@@ -31,7 +31,7 @@ export default [
     },
     {
         year: 2019,
-        head: "Разработка приложения monographJS в исследовтельских целях",
+        head: "Разработка приложения monographJS в исследовтельских целях для построенния мешка слов для NLP",
         text: ""
     },
     {
@@ -56,12 +56,12 @@ export default [
     },
     {
         year: 2020,
-        head: "Первая работа по специальности инженером разработчиком в компании L-Card ",
+        head: "Работа по специальности инженером-разработчиком в компании L-Card ",
         text: ""
     },
 
     {
-        year: "2020....",
+        year: "2021....",
         head: "Coming soon....",
         text: ""
     },

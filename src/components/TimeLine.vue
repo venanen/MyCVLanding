@@ -1,21 +1,21 @@
 <template>
-
   <div id="timeline-container">
-
-
     <ul class="timeline">
-      <li v-for="(item, i) in dataTimeline" :key="i" class="timeline-event">
-        <label class="timeline-event-icon"></label>
+      <li
+        v-for="(item, i) in dataTimeline"
+        :key="i"
+        class="timeline-event"
+      >
+        <label class="timeline-event-icon" />
         <div class="timeline-event-copy">
-          <p class="timeline-event-thumbnail">{{ item.year}}</p>
+          <p class="timeline-event-thumbnail">
+            {{ item.year }}
+          </p>
           <h3>{{ item.head }}</h3>
-          <h4 v-html="item.text"></h4>
-
+          <h4 v-html="item.text" />
         </div>
       </li>
-
     </ul>
-
   </div>
 </template>
 

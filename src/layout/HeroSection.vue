@@ -1,21 +1,45 @@
 <template>
   <Section :id="id">
     <template v-slot:background>
-      <GameLife :is-life-run="isLifeRun"/>
+      <GameLife :is-life-run="isLifeRun" />
     </template>
     <div class="h100v w100v bg">
-      <CenterContainer :fluid="true" :row="false">
-        <h1 data-scroll data-scroll-speed="2" class="mainTitle">Резюме</h1>
-        <h2 data-scroll data-scroll-speed="4" class="secondTitle"><i>На позицию WEB разработчика</i></h2>
-        <h5 data-scroll data-scroll-speed="6" class="secondTitle"><i>Да, в виде сайта. Но зато креативно </i>😎</h5>
+      <CenterContainer
+        :fluid="true"
+        :row="false"
+      >
+        <h1
+          data-scroll
+          data-scroll-speed="2"
+          class="mainTitle"
+        >
+          Резюме
+        </h1>
+        <h2
+          data-scroll
+          data-scroll-speed="4"
+          class="secondTitle"
+        >
+          <i>На позицию WEB разработчика</i>
+        </h2>
+        <h5
+          data-scroll
+          data-scroll-speed="6"
+          class="secondTitle"
+        >
+          <i>Да, в виде сайта. Но зато креативно </i>😎
+        </h5>
       </CenterContainer>
     </div>
 
-    <div data-scroll-speed="2" data-scroll class="tips">Задний фон - это не видео, а игра "Жизнь", написанная мной со
+    <div
+      data-scroll-speed="2"
+      data-scroll
+      class="tips"
+    >
+      Задний фон - это не видео, а игра "Жизнь", написанная мной со
       стандартными правилами, работающая в реальном времени
     </div>
-
-
   </Section>
 </template>
 

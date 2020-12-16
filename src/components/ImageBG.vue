@@ -1,14 +1,16 @@
 <template>
-  <div class="bg" id="bg">
-
+  <div
+    class="bg"
+    id="bg"
+  >
     <div data-scroll>
-      <div id="background"></div>
+      <div id="background" />
       <!--   Хак для того, чтобы дождаться загрузки картинки на заднем планеr-->
-      <img @load="setLoadedImage({name: 'bgImage'})"
-           :src="`/back1.jpg`"/>
+      <img
+        @load="setLoadedImage({name: 'bgImage'})"
+        :src="`/back1.jpg`"
+      >
     </div>
-
-
   </div>
 </template>
 

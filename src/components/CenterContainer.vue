@@ -1,14 +1,19 @@
 <template>
   <div :class="`${this.isFluid} h100 w100`">
-
-    <div v-if="!row" class="row h100 center-xs middle-xs ">
+    <div
+      v-if="!row"
+      class="row h100 center-xs middle-xs "
+    >
       <div class="col">
-        <slot></slot>
+        <slot />
       </div>
     </div>
 
-    <div v-else class="row h100 center-xs middle-xs ">
-      <slot></slot>
+    <div
+      v-else
+      class="row h100 center-xs middle-xs "
+    >
+      <slot />
     </div>
   </div>
 </template>

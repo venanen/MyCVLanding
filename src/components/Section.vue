@@ -1,19 +1,25 @@
 <template>
-  <section data-scroll data-scroll-section :id="idSection" :class="`contentSection`">
-    <div id="sectionBackground" v-if="customBg">
-      <slot name="background">
-      </slot>
+  <section
+    data-scroll
+    data-scroll-section
+    :id="idSection"
+    :class="`contentSection`"
+  >
+    <div
+      id="sectionBackground"
+      v-if="customBg"
+    >
+      <slot name="background" />
     </div>
-    <div data-scroll :class="{'sectionMainContent': true, 'animated': this.animated}" @click="this.handleClick"
-         class="h100 w100">
-      <slot>
-
-      </slot>
+    <div
+      data-scroll
+      :class="{'sectionMainContent': true, 'animated': this.animated}"
+      @click="this.handleClick"
+      class="h100 w100"
+    >
+      <slot />
     </div>
-
   </section>
-
-
 </template>
 
 <script>

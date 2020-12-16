@@ -1,5 +1,8 @@
 <template>
-  <div id="navbar-container" :class="{'white-bg': whiteBg, 'transparent-bg': !whiteBg}">
+  <div
+    id="navbar-container"
+    :class="{'white-bg': whiteBg, 'transparent-bg': !whiteBg}"
+  >
     <div class="container-fluid">
       <div class="row around-lg middle-lg">
         <div class="col-lg-6">
@@ -9,19 +12,21 @@
         </div>
         <div class="col-lg-6">
           <div class="row around-lg middle-lg">
-            <div class="col" v-for="(item, i) in data " :key="i">
-              <a rel="noreferrer" :href="`#section_${item.anchor}`">{{ item.name }}</a>
+            <div
+              class="col"
+              v-for="(item, i) in data "
+              :key="i"
+            >
+              <a
+                rel="noreferrer"
+                :href="`#section_${item.anchor}`"
+              >{{ item.name }}</a>
             </div>
-
           </div>
         </div>
-
-
       </div>
-
     </div>
   </div>
-
 </template>
 
 <script>

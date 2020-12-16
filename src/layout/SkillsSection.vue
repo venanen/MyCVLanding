@@ -1,22 +1,29 @@
 <template>
   <Section :id="this.id">
-    <template v-slot:background>
-
-    </template>
+    <template v-slot:background />
     <div class="bg">
       <section-title><span id="hard-skills">Hard</span>/<span id="soft-skills">Soft</span> Skills</section-title>
       <div class="container-fluid">
         <div class="row around-xs ">
           <div class="col-lg-4 col-xs-12 col-sm-12 col-lg-offset-134 chart-container">
-            <chart :chartdata="this.hardSkills.data" :options="hardSkills.option"/>
+            <chart
+              :chartdata="this.hardSkills.data"
+              :options="hardSkills.option"
+            />
           </div>
 
           <div class="col-lg-4 col-xs-12 col-sm-12 col-lg-offset-243 chart-container">
-            <chart :chartdata="softSkills.data" :options="softSkills.option"/>
+            <chart
+              :chartdata="softSkills.data"
+              :options="softSkills.option"
+            />
           </div>
 
-          <a id="digger" title="Start digger game" href="#digger">🕹</a>
-
+          <a
+            id="digger"
+            title="Start digger game"
+            href="#digger"
+          >🕹</a>
         </div>
       </div>
     </div>

@@ -1,17 +1,17 @@
 <template>
   <div class="badges">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-name: "Badge"
+  name: "Badge"
 }
 </script>
 
 <style scoped lang="scss">
-.badges{
+.badges {
   display: inline-block;
   background: $accent;
   border-radius: 3em;
@@ -19,10 +19,12 @@ name: "Badge"
   margin: 0.1em;
   color: whitesmoke;
 }
-.badge-accent{
+
+.badge-accent {
   background: $first;
 }
-.badges.inline{
+
+.badges.inline {
   padding: 0.2em;
 }
 </style>

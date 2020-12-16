@@ -1,40 +1,59 @@
 <template>
   <div>
-
-
-    <div data-scroll class="prod-container">
+    <div
+      data-scroll
+      class="prod-container"
+    >
       <div class="image-background">
-
-        <img data-scrol :src="image"/>
+        <img
+          data-scrol
+          :src="image"
+        >
       </div>
       <div class="row middle-xs">
         <div class="prod-text start-xs col-lg-6 col-sm-12 col-md-12 middle-xs">
-          <b class="title" v-if="(link === '')">
-            <slot></slot>
+          <b
+            class="title"
+            v-if="(link === '')"
+          >
+            <slot />
           </b>
-          <a v-else :href="link" target="_blank" class="title">
-            <slot></slot>
+          <a
+            v-else
+            :href="link"
+            target="_blank"
+            class="title"
+          >
+            <slot />
           </a>
-          <a :href="github" v-if="github !== ''" rel="noreferrer">
-            <img :src="GitHub" alt="github" class="github-link"></a>
-          <hr class="divider"/>
+          <a
+            :href="github"
+            v-if="github !== ''"
+            rel="noreferrer"
+          >
+            <img
+              :src="GitHub"
+              alt="github"
+              class="github-link"
+            ></a>
+          <hr class="divider">
           <div class="subtitle">
-            <slot name="subtitle"></slot>
+            <slot name="subtitle" />
           </div>
-
         </div>
 
         <div class=" col-lg-5 col-sm-12 col-md-12 end-xs middle-xs badge-container">
           <div>
-            <badge v-for="(badge, i) in badges" :class="{'badge-accent': (badge === 'Frontend' || badge === 'Backend')}"
-                   :key="i">{{ badge }}
+            <badge
+              v-for="(badge, i) in badges"
+              :class="{'badge-accent': (badge === 'Frontend' || badge === 'Backend')}"
+              :key="i"
+            >
+              {{ badge }}
             </badge>
           </div>
-
-
         </div>
       </div>
-
     </div>
   </div>
 </template>

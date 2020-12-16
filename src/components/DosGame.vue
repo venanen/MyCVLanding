@@ -1,6 +1,9 @@
 <template>
   <div>
-    <canvas ref="canvas" id="jsdos"></canvas>
+    <canvas
+      ref="canvas"
+      id="jsdos"
+    />
   </div>
 </template>
 

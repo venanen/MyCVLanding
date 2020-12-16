@@ -1,15 +1,19 @@
 <template>
-  <div data-scroll :data-scroll-speed="this.scroll"
-       :class="`info
+  <div
+    data-scroll
+    :data-scroll-speed="this.scroll"
+    :class="`info
        line-${this.line}
        ${fixed?'fixed':'unfixed'}`"
   >
     <div>
-      <h2 class="question"><i>
-        <slot name="question"></slot>
-      </i></h2>
+      <h2 class="question">
+        <i>
+          <slot name="question" />
+        </i>
+      </h2>
     </div>
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

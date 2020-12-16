@@ -1,97 +1,152 @@
 <template>
-
-
   <Section :id="this.id">
     <div class="bg">
-      <section-title data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
+      <section-title
+        data-scroll
+        data-scroll-speed="2"
+        data-scroll-direction="horizontal"
+      >
         Дополнительные скилы
       </section-title>
-      <div>
-
-
-      </div>
+      <div />
       <div class="container-fluid">
         <div class="row">
-
           <div class="col-xs-12 col-sm-12">
             <div class="row">
               <div class="col-lg-12 col-sm-12">
-                <info-block :scroll="2" line="left">
-                  <template v-slot:question>Программирование и безопасность</template>
+                <info-block
+                  :scroll="2"
+                  line="left"
+                >
+                  <template v-slot:question>
+                    Программирование и безопасность
+                  </template>
                   Знаю
-                  <badge class="inline">С/С++</badge>
+                  <badge class="inline">
+                    С/С++
+                  </badge>
                   на уровне университетских знаний.<br>
-                  <badge class="inline">Python 3</badge>
+                  <badge class="inline">
+                    Python 3
+                  </badge>
                   на уровне чтения. На данный момент изучаю
-                  <badge class="inline">Pandas</badge>
+                  <badge class="inline">
+                    Pandas
+                  </badge>
                   ,
-                  <badge class="inline">NumPy</badge>
+                  <badge class="inline">
+                    NumPy
+                  </badge>
                   ,
-                  <badge class="inline">Keras</badge>
+                  <badge class="inline">
+                    Keras
+                  </badge>
                   ,
-                  <badge class="inline">TensorFlow</badge>
+                  <badge class="inline">
+                    TensorFlow
+                  </badge>
                   в рамках университетской программы.
                   В школьные годы участвовал с командой в CTF в категории
-                  <badge class="inline">WEB</badge>
+                  <badge class="inline">
+                    WEB
+                  </badge>
                   , зарегестрирован в программе
-                  <badge class="inline">hackerOne</badge>
-                  и даже зарепортил две уязвимости
+                  <badge class="inline">
+                    hackerOne.
+                  </badge>
                 </info-block>
               </div>
             </div>
             <div class="row middle-lg">
               <div class="col-lg-4 col-sm-12">
-                <chart :chartdata="addedSkills.data" :options="addedSkills.option"/>
+                <chart
+                  :chartdata="addedSkills.data"
+                  :options="addedSkills.option"
+                />
               </div>
               <div class="col-lg-8  col-sm-12">
-                <info-block :scroll="2" line="right">
-                  <template v-slot:question>Разработка электроники</template>
+                <info-block
+                  :scroll="2"
+                  line="right"
+                >
+                  <template v-slot:question>
+                    Разработка электроники
+                  </template>
                   Основная специальность в университете. Владею пакетами
-                  <badge class="inline">SolidWorks</badge>
+                  <badge class="inline">
+                    SolidWorks
+                  </badge>
                   ,
-                  <badge class="inline">AutoCAD</badge>
-                  <badge class="inline">AVR/Atmel Studio</badge>
-                  <badge class="inline">P-CAD/Altium Designer</badge>
+                  <badge class="inline">
+                    AutoCAD
+                  </badge>
+                  <badge class="inline">
+                    AVR/Atmel Studio
+                  </badge>
+                  <badge class="inline">
+                    P-CAD/Altium Designer
+                  </badge>
                   . Могу написать прошивку для микроконтроллера
-                  <badge class="inline">AVR</badge>
+                  <badge class="inline">
+                    AVR
+                  </badge>
                   на
-                  <badge class="inline">C</badge>
+                  <badge class="inline">
+                    C
+                  </badge>
                   или
-                  <badge class="inline">ASM</badge>
+                  <badge class="inline">
+                    ASM
+                  </badge>
                   . Также владею пакетом
-                  <badge class="inline">Office</badge>
+                  <badge class="inline">
+                    Office
+                  </badge>
                   и стандартами
-                  <badge class="inline">ЕСКД</badge>
+                  <badge class="inline">
+                    ЕСКД
+                  </badge>
                   при написании документации
                 </info-block>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-12 col-sm-12">
-                <info-block :scroll="2" line="left">
-                  <template v-slot:question>Фотография</template>
+                <info-block
+                  :scroll="2"
+                  line="left"
+                >
+                  <template v-slot:question>
+                    Фотография
+                  </template>
                   Основное хобби. Снимаю
-                  <badge class="inline">пейзажи</badge>
+                  <badge class="inline">
+                    пейзажи
+                  </badge>
                   ,
-                  <badge class="inline">портреты</badge>
+                  <badge class="inline">
+                    портреты
+                  </badge>
                   ,
-                  <badge class="inline">астро-</badge>
+                  <badge class="inline">
+                    астро-
+                  </badge>
                   и
-                  <badge class="inline">макро</badge>
+                  <badge class="inline">
+                    макро
+                  </badge>
                   фотографии, и все, что подвернется под руку. Фотография, которая сейчас на заднем плане -
-                  <badge class="inline">победитель</badge>
+                  <badge class="inline">
+                    победитель
+                  </badge>
                   всероссийского конкурса фотографий и висела в Ботаническом саду, чем я очень горжусь :)
                 </info-block>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
-
-
   </Section>
 </template>
 

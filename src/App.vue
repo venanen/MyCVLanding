@@ -1,26 +1,44 @@
 <template>
-  <div id="app" :class="{nightTheme: isNightTheme}">
-    <navbar :data="sections" v-if="!this.$core.isMobile()"/>
-    <ImageBG/>
+  <div
+    id="app"
+    :class="{nightTheme: isNightTheme}"
+  >
+    <navbar
+      :data="sections"
+      v-if="!this.$core.isMobile()"
+    />
+    <ImageBG />
     <AppContainer :smooth="this.$core.isUseSmooth()">
-
-      <hero-section :is-life-run="this.$core.isLifeRun()" id="hero"/>
-      <skills-section id="skills"/>
-      <portfolio-section id="portfolio"/>
-      <additional-skils-section id="add_skills"/>
-      <about-me-section id="about"/>
-      <faq-section id="faq"/>
-      <about-company-section id="company"/>
-
+      <hero-section
+        :is-life-run="this.$core.isLifeRun()"
+        id="hero"
+      />
+      <skills-section id="skills" />
+      <portfolio-section id="portfolio" />
+      <additional-skils-section id="add_skills" />
+      <about-me-section id="about" />
+      <faq-section id="faq" />
+      <about-company-section id="company" />
     </AppContainer>
 
-    <div v-if="playingDOS" @click="closeGame" class="close">close</div>
-    <DosGame command="DIGGER.COM" file="digger.zip" v-if="playingDOS"/>
+    <div
+      v-if="playingDOS"
+      @click="closeGame"
+      class="close"
+    >
+      close
+    </div>
+    <DosGame
+      command="DIGGER.COM"
+      file="digger.zip"
+      v-if="playingDOS"
+    />
 
     <transition name="fade">
-
-      <Loading key="main-loading" v-if="!isLoading"/>
-
+      <Loading
+        key="main-loading"
+        v-if="!isLoading"
+      />
     </transition>
   </div>
 </template>

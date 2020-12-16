@@ -1,8 +1,11 @@
 <template>
   <div id="canvasContainer">
-    <canvas ref="canvas" width="1000" height="500" id="life">
-    </canvas>
-
+    <canvas
+      ref="canvas"
+      width="1000"
+      height="500"
+      id="life"
+    />
   </div>
 </template>
 

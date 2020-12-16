@@ -1,6 +1,11 @@
 <template>
-  <div data-scroll-container data-scroll-repeat="true" ref="scrollSections" class="hello">
-    <slot></slot>
+  <div
+    data-scroll-container
+    data-scroll-repeat="true"
+    ref="scrollSections"
+    class="hello"
+  >
+    <slot />
   </div>
 </template>
 

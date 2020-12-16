@@ -1,20 +1,29 @@
 <template>
-  <Section :class="{doAnimation: sectionClass}" @click="eventClick" :id="this.id">
-    <template v-slot:background>
-
-    </template>
+  <Section
+    :class="{doAnimation: sectionClass}"
+    @click="eventClick"
+    :id="this.id"
+  >
+    <template v-slot:background />
     <div class="bg">
       <div class="container-fluid">
         <!--      TODO: Не сделать прозрачнее-->
         <section-title>Небольшое FAQ</section-title>
 
         <div class="row">
-          <div v-for="(item, i) in this.$usesData.faq" :key="i" :class="{'col-lg-8': true, 'col-lg-offset-4': (i%2===0)}">
-            <info-block :scroll="2" :line=" (i%2===0)?'right':'left'">
+          <div
+            v-for="(item, i) in this.$usesData.faq"
+            :key="i"
+            :class="{'col-lg-8': true, 'col-lg-offset-4': (i%2===0)}"
+          >
+            <info-block
+              :scroll="2"
+              :line=" (i%2===0)?'right':'left'"
+            >
               <template v-slot:question>
-                <div v-html="item.q"></div>
+                <div v-html="item.q" />
               </template>
-              <div v-html="item.a"></div>
+              <div v-html="item.a" />
             </info-block>
           </div>
         </div>
