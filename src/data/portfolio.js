@@ -25,6 +25,16 @@ export default {
             class: 'col-lg-6 col-sm-12 col-md-12',
             badges: ['Backend', 'PHP5.3', 'MySql', 'API']
         },
+
+        {
+            title: "EfremoffGuitars",
+            subtitle: "Лендинг для мастерской по работе и доводке гитар",
+            link: "http://efremovguitars.ru/",
+            image: "https://sun9-8.userapi.com/_grkmls0ja8XAcxX6Vd2RK8CBLMMCY3s1cgXhw/ysZyWz4Is-o.jpg",
+            class: 'col-lg-12 col-sm-12 col-md-12',
+            github: 'https://github.com/venanen/EfremoffGuitar',
+            badges: ['Frontend', 'HTML5']
+        },
         {
             title: "monoGraph.js",
             subtitle: "Инструмент по токенизации текста, и построению мешка слов на клиентских мощностях без использования сервера",
@@ -35,13 +45,20 @@ export default {
             badges: ['Frontend','React', 'MobX', 'Az.js', 'Chart.js', 'rsuite']
         },
         {
-            title: "EfremoffGuitars",
-            subtitle: "Лендинг для мастерской по работе и доводке гитар",
-            link: "http://efremovguitars.ru/",
-            image: "https://sun9-8.userapi.com/_grkmls0ja8XAcxX6Vd2RK8CBLMMCY3s1cgXhw/ysZyWz4Is-o.jpg",
+            title: "Calena",
+            subtitle: "Австралийский сервис кэшбека на услуги люкс-класса - аренду яхт, самолетов, машин и т.д. Делался в команде",
+            link: "https://cashback-app.nomadicsoft.io/",
+            image: "https://sun9-40.userapi.com/impf/e3NDI_DIkbmQm1WqC52YRjaMInnvPedSkLES5Q/veSO6ZE0chI.jpg?size=1906x967&quality=96&sign=ce35fdf254f47a0103ec4ba5eca81cc5&type=album",
             class: 'col-lg-6 col-sm-12 col-md-12',
-            github: 'https://github.com/venanen/EfremoffGuitar',
-            badges: ['Frontend', 'HTML5']
+            badges: ['Frontend', 'ES2015', 'Vue', 'Vuetify', 'UIKit', 'Vuelidate', 'REST API', "HTML5", "Vuex", "Vue Auth", "Figma"]
+        },
+        {
+            title: "Noodzly",
+            subtitle: "Западный сервис, по функционалу аналогичный onlyfans. Сверстан лично мной по дизайну из Adobe XD. Сайт умеет фотографировать и снимать видео с вебки на клиенте. Важно: сайт сделан исключительно под мобильные устройства, таково требование заказчика. ",
+            link: "https://cashback-app.nomadicsoft.io/",
+            image: "https://sun9-9.userapi.com/impf/7BgsuMyU2Tb7NZe8Pi72xzDuX0nUUReTQs-cDg/u6ga5sfuttM.jpg?size=1898x966&quality=96&sign=e99f42dc97afb0850f28ab98188f2238&type=album",
+            class: 'col-lg-12 col-sm-12 col-md-12',
+            badges: ['Frontend', 'ES2015', 'Vue', 'Vuetify', 'Vuelidate', 'REST API', "HTML5", "Vuex", "Vue Auth", "HTML5 MediaApi", "Vue-animate", "Axios"]
         },
     ]
 }

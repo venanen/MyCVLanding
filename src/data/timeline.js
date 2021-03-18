@@ -59,7 +59,11 @@ export default [
         head: "Работа по специальности инженером-разработчиком в компании L-Card ",
         text: ""
     },
-
+    {
+        year: 2020,
+        head: "Работа в компании NomadicSoft на позиции Vue Middle Frontend Developer",
+        text: ""
+    },
     {
         year: "2021....",
         head: "Coming soon....",
