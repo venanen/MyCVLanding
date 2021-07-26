@@ -22,6 +22,7 @@
             :badges="prod.badges"
             :link="prod.link"
             :github="prod.github"
+            :adult="prod.adult"
             :key="i"
           >
             {{ prod.title }}

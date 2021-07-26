@@ -11,16 +11,17 @@
         <h1
           data-scroll
           data-scroll-speed="2"
-          class="mainTitle"
+          class="mainTitle glitch"
+          data-text="РЕЗЮМЕ"
         >
-          Резюме
+          РЕЗЮМЕ
         </h1>
         <h2
           data-scroll
           data-scroll-speed="4"
           class="secondTitle"
         >
-          <i>На позицию WEB разработчика</i>
+          <i>На позицию Vue Frontend Developer</i>
         </h2>
         <!-- <h5
           data-scroll
@@ -63,6 +64,7 @@ export default {
 
 <style scoped lang="scss">
 
+
 .tips {
   position: absolute;
   bottom: -2px;
@@ -71,13 +73,14 @@ export default {
 }
 
 .bg {
-  background: #00000085;
+  background: linear-gradient(to top, #000000b0, #210000b5);
 
 
 }
 
 .mainTitle {
-  font-size: 10em;
+  font-size: 12em;
+  letter-spacing: 0.2em;
   font-weight: 200;
   text-shadow: black 1px 1px 2px;
 }
@@ -91,6 +94,63 @@ export default {
     font-size: 5em;
     font-weight: 200;
     text-shadow: black 1px 1px 2px;
+  }
+}
+@mixin glitchCopy {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch {
+  position: relative;
+  color: white;
+  font-size: 10em;
+  letter-spacing: .5em;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+  &::before {
+    @include glitchCopy;
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  &::after {
+    @include glitchCopy;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+}
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*((1/$steps)))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+      transform: skew((random(100)/ 100) + deg);
+    }
+  }
+}
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+      transform: skew((random(100)/100) + deg);
+    }
+  }
+}
+
+@keyframes glitch-skew {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      transform: skew((random(10) - 5) + deg);
+    }
   }
 }
 </style>

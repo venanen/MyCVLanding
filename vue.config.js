@@ -3,6 +3,7 @@ module.exports = {
         loaderOptions: {
             sass: {
                 additionalData: `
+                    @use "sass:math";
                     @import "src/styles/variables";
                     @import "src/styles/global";
                     @import "src/styles/flexboxgrid";

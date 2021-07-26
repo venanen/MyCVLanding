@@ -31,7 +31,7 @@ export default {
             subtitle: "Лендинг для мастерской по работе и доводке гитар",
             link: "http://efremovguitars.ru/",
             image: "https://sun9-8.userapi.com/_grkmls0ja8XAcxX6Vd2RK8CBLMMCY3s1cgXhw/ysZyWz4Is-o.jpg",
-            class: 'col-lg-12 col-sm-12 col-md-12',
+            class: 'col-lg-6 col-sm-12 col-md-12',
             github: 'https://github.com/venanen/EfremoffGuitar',
             badges: ['Frontend', 'HTML5']
         },
@@ -51,6 +51,15 @@ export default {
             image: "https://sun9-40.userapi.com/impf/e3NDI_DIkbmQm1WqC52YRjaMInnvPedSkLES5Q/veSO6ZE0chI.jpg?size=1906x967&quality=96&sign=ce35fdf254f47a0103ec4ba5eca81cc5&type=album",
             class: 'col-lg-6 col-sm-12 col-md-12',
             badges: ['Frontend', 'ES2015', 'Vue', 'Vuetify', 'UIKit', 'Vuelidate', 'REST API', "HTML5", "Vuex", "Vue Auth", "Figma"]
+        },
+        {
+            title: "Sinparty",
+            subtitle: "Adult-сайт. Удивителен тем, что эротика в коде гораздо жестче чем в любом ролике на сайте. Необычный кейс по работе с самым настоящим legacy из Индии. На проекте я занимался  разработкой и доработкой интерфейса, а также чинил миллионы багов после деплоя  ",
+            link: "https://sinparty.com/",
+            image: "https://sun9-79.userapi.com/impg/0K5O5wPrhx_QLMpx-JbeDfSeeDernX5-Etwn2w/IZVdDC7SR4o.jpg?size=1898x937&quality=96&sign=bc8600a2193663a05b78a27e824f97f7&type=album",
+            class: 'col-lg-6 col-sm-12 col-md-12',
+            badges: ['Frontend', 'HTML5', 'PHP', 'Legacy', 'Adult'],
+            adult: true,
         },
         {
             title: "Noodzly",

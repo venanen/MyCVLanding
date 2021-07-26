@@ -5,14 +5,20 @@
       class="prod-container"
     >
       <div class="image-background">
-        <img
+        <a
+          :href="link"
+          target="_blank"
+          class="title"
+        > <img
           data-scrol
+          :style="adult?'filter: blur(3px)':''"
           :src="image"
         >
+        </a>
       </div>
       <div class="row middle-xs">
         <div class="prod-text start-xs col-lg-6 col-sm-12 col-md-12 middle-xs">
-          <b
+          <b 
             class="title"
             v-if="(link === '')"
           >
@@ -26,6 +32,10 @@
           >
             <slot />
           </a>
+          <span
+            class="adult-plus"
+            v-if="adult"
+          >18+</span>
           <a
             :href="github"
             v-if="github !== ''"
@@ -63,30 +73,40 @@ import GitHub from '@/assets/github.svg'
 import Badge from "@/components/Badge";
 
 export default {
-  name: "ProductCard",
-  components: {Badge},
-  data: () => ({
-    GitHub,
+    name: "ProductCard",
+    components: {Badge},
+    data: () => ({
+        GitHub,
 
-  }),
-  props: {
-    badges: Array,
-    image: String,
-    link: {
-      type: String,
-      default: ''
+    }),
+    props: {
+        badges: Array,
+        image: String,
+        adult: {
+            type: Boolean,
+            default: false
+        },
+        link: {
+            type: String,
+            default: ''
+        },
+        github: {
+            type: String,
+            default: ''
+        }
+
     },
-    github: {
-      type: String,
-      default: ''
-    }
-
-  },
 
 }
 </script>
 
 <style scoped lang="scss">
+.adult-plus{
+  font-size: 1em;
+  border: solid 1px black;
+  border-radius: 50%;
+  padding: 6px 3px;
+}
 .prod-container {
 
   background: whitesmoke;
@@ -98,7 +118,7 @@ export default {
   transition: 100ms ease-out;
   margin: 20px;
   transform: translateX(-10em);
-
+  height: 95%;
 }
 
 .prod-container.is-inview {
