@@ -64,7 +64,7 @@ export default {
         {
             title: "Noodzly",
             subtitle: "Западный сервис, по функционалу аналогичный onlyfans. Сверстан лично мной по дизайну из Adobe XD. Сайт умеет фотографировать и снимать видео с вебки на клиенте. Важно: сайт сделан исключительно под мобильные устройства, таково требование заказчика. ",
-            link: "https://cashback-app.nomadicsoft.io/",
+            link: "https://noodzly.com/",
             image: "https://sun9-9.userapi.com/impf/7BgsuMyU2Tb7NZe8Pi72xzDuX0nUUReTQs-cDg/u6ga5sfuttM.jpg?size=1898x966&quality=96&sign=e99f42dc97afb0850f28ab98188f2238&type=album",
             class: 'col-lg-12 col-sm-12 col-md-12',
             badges: ['Frontend', 'ES2015', 'Vue', 'Vuetify', 'Vuelidate', 'REST API', "HTML5", "Vuex", "Vue Auth", "HTML5 MediaApi", "Vue-animate", "Axios"]
